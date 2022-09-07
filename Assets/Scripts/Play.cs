@@ -49,13 +49,10 @@ public class Play : MonoBehaviour
         switch (col.gameObject.tag) 
         {
             case "j1": // minigame da loja
-                SceneManager.LoadScene("jogo1");
+                SceneManager.LoadScene("loja");
                 break;
-            case "j2":
-                print("minigame 2");
-                break;
-            case "j3":
-                print("minigame 3");
+            case "j4":
+                SceneManager.LoadScene("lixo");
                 break;
         }
     }

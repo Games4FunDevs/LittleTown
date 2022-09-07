@@ -11,6 +11,7 @@ TagManager:
   - caixa
   - total
   - lanche
+  - j4
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Lixeira
   - 
   - 
   - 

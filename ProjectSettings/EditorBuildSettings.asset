@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Hub.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
   - enabled: 1
-    path: Assets/Scenes/jogo1.unity
+    path: Assets/Scenes/loja.unity
     guid: dd7d41bec0d43e94a8b201fefffbbc72
+  - enabled: 1
+    path: Assets/Scenes/lixo.unity
+    guid: 129a9106b02259247a374e4175ee30a6
   m_configObjects: {}
