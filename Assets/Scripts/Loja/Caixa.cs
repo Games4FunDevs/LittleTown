@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Caixa : MonoBehaviour
 {
-    public int total = 0, preco = 0, next = 0, bNext = 0; // next (proximo lanche) / bnext (lanche anterior)
+    public int total = 0, preco = 0, next = 0, bNext = 0, repeticao = 0; // next (proximo lanche) / bnext (lanche anterior)
     public GameObject prefab, spawn, opc; // prefab (lanche) / spawn (ponto de spawn) / opc (botao de escolha)
     public GameObject[] opcoes; // botoes de escolha
     int[] resposta; // numeros que vao nos botoes
@@ -22,28 +23,35 @@ public class Caixa : MonoBehaviour
 
     void Update()
     {
+        if (repeticao >= 3) { SceneManager.LoadScene("Hub"); }
+
         if (bNext != next && next < 2) // se passou um produto
         {
             Instantiate(prefab, spawn.transform.position, Quaternion.identity); // spawna um novo
             bNext = next; 
         }
 
+        if (next == 0) { texto.text = "0"; }
         if (next == 1) { texto.text = preco.ToString(); } // texto inicial
-        else if (next == 2) // acaba a soma
+        if (next == 2) // acaba a soma
         {
-            int num = Random.Range(0, resposta.Length-1);
-            resposta[num] = total; // resposta certa
-            //opcoes[num].GetComponent<Text>.text = resposta[num].ToString();
             for (int i = 0; i < resposta.Length; i++)
             { 
-                if (resposta[i] == 0) 
+                if (resposta[i] == 0)
                 {
-                    resposta[i] = Random.Range(0, 100); // resposta errada
-                    //opcoes[i].GetComponent<Text>.text = resposta[i];
-                } 
+                    resposta[i] = Random.Range(0, 40); // resposta errada
+                    opcoes[i].transform.GetChild(0).GetComponent<Text>().text = resposta[i].ToString(); // passa pro botao
+                }
             } 
+
+            int num = Random.Range(0, 3); // escolhe uma das opcoes pra ser a certa
+            resposta[num] = total; // resposta certa
+            opcoes[num].transform.GetChild(0).GetComponent<Text>().text = resposta[num].ToString(); // passa pro botao
+            opcoes[num].GetComponent<Resposta>().num_ = int.Parse(opcoes[num].transform.GetChild(0).GetComponent<Text>().text); // atualiza var da resposta
+
             texto.text = (total - preco).ToString() + " + " + preco.ToString(); // atualiza a soma
             opc.SetActive(true); // mostra os botoes
+            next = 3; // pra n ficar chamando direto no update
         }
     }
 }

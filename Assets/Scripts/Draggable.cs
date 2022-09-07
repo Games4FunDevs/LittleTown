@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Draggable : MonoBehaviour
 {
+    /*
+    * aqui é um script pra clicar e arrastar algum objeto
+    * deixei separado do minigame pois pode ser usado em outro
+    * é so colocar no objeto que vai ter esse comportamento
+    */
+
     Vector3 offset;
     float zCoord;
     public bool mouseDown = false;

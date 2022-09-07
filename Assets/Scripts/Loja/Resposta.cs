@@ -5,20 +5,24 @@ using UnityEngine.UI;
 
 public class Resposta : MonoBehaviour
 {
-    int num;
+    public int num_;
     Caixa box;
     
-    void Start()
-    {
-        box = GameObject.FindGameObjectWithTag("caixa").GetComponent<Caixa>();
-        num = int.Parse(this.transform.GetChild(0).GetComponent<Text>().text);
-    }
+    void Start() => box = GameObject.FindGameObjectWithTag("caixa").GetComponent<Caixa>();
 
-    void Check()
+    public void Check()
     {
-        if (num == box.total)
+        if (this.num_ == box.total)
         {
             print("certo");
+
+            GameObject[] lanches = GameObject.FindGameObjectsWithTag("lanche");
+            foreach (GameObject item in lanches) { Destroy(item); }
+
+            box.total = 0;
+            box.next = 0;
+            box.repeticao++;
+            box.opc.SetActive(false);
         }
         else
         {

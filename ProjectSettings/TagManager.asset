@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - caixa
   - total
+  - lanche
   layers:
   - Default
   - TransparentFX

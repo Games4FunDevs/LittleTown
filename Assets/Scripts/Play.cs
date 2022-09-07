@@ -1,45 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Play : MonoBehaviour
 {
-    //GameObject player;
+    /*
+    * esse scrpit fica no objeto do player, no hub
+    * se movimenta pelo cenário e chama outra cena ao interagir com objetos de certa tag
+    */
+
     [SerializeField] int speed = 5;
     Vector3 point;
+    bool stop;
 
     void Awake()
     {
-        //player = GameObject.FindGameObjectWithTag("Player");
-        point = this.transform.position;
+        // seta a posicao incial do player
+        point.x = this.transform.position.x;
+        point.z = this.transform.position.z;
+        point.y = 1f;
     }
-
-    // 1 - mover player ao ponto
-    // 2 - se encostou no minigame muda de cena
 
     void Update()
     {
-        //Check for the mouse being pressed (also works as a touch input)
-        if (Input.GetMouseButtonDown(0))
-        {
+        if (Input.GetMouseButtonDown(0)) 
+        {   // se clicou num lugar
             RaycastHit hit;
-            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit)) {
-                point = hit.point;
-                print(point);
+            if (Physics.Raycast(ray, out hit)) { // pega esse ponto na cena
+                point.x = hit.point.x;
+                point.z = hit.point.z;
             }
         }
-        transform.position = Vector3.MoveTowards(transform.position, point, speed * Time.deltaTime);
+        
+        // if (stop == false)
+        // {
+            transform.position = Vector3.MoveTowards(transform.position, point, speed * Time.deltaTime); // move o objeto ate o ponto
+        // }
+        // else
+        // {
+        //     StopPlayer();
+        // }
     }
 
     void OnTriggerEnter(Collider col)
-    {
-        
+    {   // se colidir com objeto de certa tag
+        switch (col.gameObject.tag) 
+        {
+            case "j1": // minigame da loja
+                SceneManager.LoadScene("jogo1");
+                break;
+            case "j2":
+                print("minigame 2");
+                break;
+            case "j3":
+                print("minigame 3");
+                break;
+        }
     }
 
-    void PlayGame()
-    {
-        
-    }
+    // void OnColliderEnter(Collision col)
+    // {
+    //     if (col.gameObject.layer != 6) // vai impedir de querer entrar nos objetos
+    //     {
+    //         stop = true;
+    //     }
+    //     else
+    //     {
+    //         stop = false;
+    //     }
+    // }
+
+    // void StopPlayer()
+    // {
+    //     speed = 0;
+    //     point = transform.position;
+    // }
 }
