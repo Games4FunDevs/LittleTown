@@ -12,6 +12,7 @@ TagManager:
   - total
   - lanche
   - j4
+  - lixo
   layers:
   - Default
   - TransparentFX

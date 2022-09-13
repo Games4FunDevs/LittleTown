@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 1660759003549362032}
   - component: {fileID: 4146110395955975002}
   m_Layer: 0
-  m_Name: Lixo
-  m_TagString: Untagged
+  m_Name: Lixo4
+  m_TagString: lixo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,5 +144,5 @@ MonoBehaviour:
   ponto:
   - {fileID: 0}
   - {fileID: 0}
-  tipo: 0
+  tipo: Lixeira4
   mouseStatus: 0

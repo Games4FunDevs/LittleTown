@@ -5,21 +5,16 @@ using UnityEngine;
 public class Lixo : MonoBehaviour
 {
     public Transform[] ponto; // lugares que o lixo deve ficar
-    Vector3 escalaInicialLixeira = new Vector3(1.5392f, 1.5392f, 1.5392f);
+    Vector3 escalaInicialLixeira = new Vector3(0.1577156f, 1.006982f, 0.8731064f);
     int passou = 0; // status do lixo
-    public int tipo = 0; // 0 = lixeira 1 (papel) // 1 = lixeira 2 (metal) // 2 = lixeira 3 (plástico) // 3 = lixeira 4 (orgânico)
-    //LixoMinigame lixocs;
-
-    void Awake() 
-    {
-        // lixocs = GameObject.Find("GameManager").GetComponent<LixoMinigame>();
-    }
-
+    public string tipo; // 0 = lixeira 1 (papel) // 1 = lixeira 2 (metal) // 2 = lixeira 3 (plástico) // 3 = lixeira 4 (orgânico)
+    Collider colisao;
+    
     void Update() 
     {
         if (ponto[0] != null)
         {
-            if (this.passou == 0) // vai lansar o lixo
+            if (this.passou == 0 && tipo == colisao.name) // vai lansar o lixo
             {
                 this.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 this.transform.position = Vector3.MoveTowards(transform.position, ponto[0].position, 3 * Time.deltaTime); // fica no ponto inicial
@@ -46,8 +41,9 @@ public class Lixo : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {
-        if (col.name == "Lixeira2" || col.name == "Lixeira1" || col.name == "Lixeira3")
+        if (col.name.Contains("Lixeira"))
         {
+            colisao = col;
             col.gameObject.GetComponent<Animator>().enabled = true; // chama a animacao
             if (mouseStatus == 2) // se soltou o mouse
             {
@@ -60,7 +56,7 @@ public class Lixo : MonoBehaviour
     }
     void OnTriggerExit(Collider col)
     {   // para a animacao
-        if (col.name == "Lixeira2" || col.name == "Lixeira1" || col.name == "Lixeira3")
+        if (col.name.Contains("Lixeira"))
         {
             col.gameObject.GetComponent<Animator>().enabled = false;
             col.gameObject.GetComponent<Transform>().localScale = escalaInicialLixeira;
