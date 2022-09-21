@@ -49,7 +49,7 @@ public class Lixo : MonoBehaviour
         if (col.name.Contains("Lixeira"))
         {
             colisao = col;
-            gameObject.GetComponent<Animator>().enabled = true; // chama a animacao
+            col.GetComponent<Animator>().enabled = true; // chama a animacao
             
             if (mouseStatus == 2) // se soltou o mouse
             {
