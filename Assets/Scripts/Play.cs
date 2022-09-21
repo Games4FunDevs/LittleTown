@@ -10,67 +10,31 @@ public class Play : MonoBehaviour
     * se movimenta pelo cenário e chama outra cena ao interagir com objetos de certa tag
     */
 
-    [SerializeField] int speed = 5;
-    float rotSpeed = 5f;
-    Rigidbody rb;
-    //CharacterController controller;
-    //Vector3 point;
-    //bool stop;
-    Vector3 targetRotation;
+    float speed = 6f, rotSpeed = 150f, gravidade = 8f;
+    Vector3 inputDir, v_velocity;
+    CharacterController cc;
 
-    void Awake()
+    void Awake() => cc = GetComponent<CharacterController>();
+
+    void Update()
     {
-        rb = GetComponent<Rigidbody>();
 
-        //controller = GetComponent<CharacterController>();
-        // seta a posicao incial do player
-        //point.x = this.transform.position.x;
-        //point.z = this.transform.position.z;
-        //point.y = 1f;
     }
 
     void FixedUpdate()
+    {   
+        Movement();
+        if (cc.isGrounded) { v_velocity.y = 0; }
+        else { v_velocity.y -= gravidade * Time.deltaTime; }
+    }
+
+    void Movement()
     {
-        // Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 moveRaw =new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-
-        if (move.sqrMagnitude > 1) { move.Normalize(); }
-        if (moveRaw.sqrMagnitude > 1) { moveRaw.Normalize(); }
-        //rb.MovePosition(transform.position + move * speed * Time.deltaTime);
-
-        if (moveRaw != Vector3.zero)
-        {
-            targetRotation = Quaternion.LookRotation(move).eulerAngles;
-        }
-
-        rb.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(targetRotation.x, Mathf.Round(targetRotation.y / 45) * 45, targetRotation.z), Time.deltaTime * rotSpeed);
-
-        rb.velocity = move * speed * Time.deltaTime;
-
-
-        //transform.Rotate(0.0f, -move.x * speed, 0.0f);
-
-        //controller.Move(move * Time.deltaTime * speed);
-
-        //if (Input.GetMouseButtonDown(0)) 
-        //{   // se clicou num lugar
-        //    RaycastHit hit;
-        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //    if (Physics.Raycast(ray, out hit)) { // pega esse ponto na cena
-        //        point.x = hit.point.x;
-        //        point.z = hit.point.z;
-        //    }
-        //}
-
-        // if (stop == false)
-        // {
-        //transform.position = Vector3.MoveTowards(transform.position, point, speed * Time.deltaTime); // move o objeto ate o ponto
-        // }
-        // else
-        // {
-        //     StopPlayer();
-        // }
+        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector3 move = cc.transform.forward * input.y;
+        cc.transform.Rotate(Vector3.up * input.x * (rotSpeed * Time.deltaTime));
+        cc.Move(move * speed * Time.deltaTime);
+        cc.Move(v_velocity);
     }
 
     void OnTriggerEnter(Collider col)
@@ -85,22 +49,4 @@ public class Play : MonoBehaviour
                 break;
         }
     }
-
-    // void OnColliderEnter(Collision col)
-    // {
-    //     if (col.gameObject.layer != 6) // vai impedir de querer entrar nos objetos
-    //     {
-    //         stop = true;
-    //     }
-    //     else
-    //     {
-    //         stop = false;
-    //     }
-    // }
-
-    // void StopPlayer()
-    // {
-    //     speed = 0;
-    //     point = transform.position;
-    // }
 }

@@ -12,13 +12,15 @@ public class Draggable : MonoBehaviour
 
     Vector3 offset;
     float zCoord;
-    public bool mouseDown = false;
+    public bool mouseDown = false, beingDrag = false;
 
     private void OnMouseDown()
     {
         zCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         offset = gameObject.transform.position - GetMouseWorldPos();
+        //gameObject.GetComponent<Rigidbody>().useGravity = false;
         mouseDown = true;
+        beingDrag = false;
     }
 
     private Vector3 GetMouseWorldPos()
@@ -32,5 +34,11 @@ public class Draggable : MonoBehaviour
     {
         transform.position = GetMouseWorldPos() + offset;
         mouseDown = false;
+        beingDrag = true;
+    }
+
+    void OnMouseUp()
+    {
+        beingDrag = false;
     }
 }

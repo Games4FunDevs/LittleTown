@@ -5,10 +5,13 @@ using UnityEngine;
 public class Lixo : MonoBehaviour
 {
     public Transform[] ponto; // lugares que o lixo deve ficar
-    Vector3 escalaInicialLixeira = new Vector3(0.1577156f, 1.006982f, 0.8731064f);
+    Vector3 escalaInicialLixeira = new Vector3(0.054586f, 0.34852f, 0.30219f);
     int passou = 0; // status do lixo
     public string tipo; // 0 = lixeira 1 (papel) // 1 = lixeira 2 (metal) // 2 = lixeira 3 (plástico) // 3 = lixeira 4 (orgânico)
     Collider colisao;
+    Draggable dragcs;
+
+    void Start() => dragcs = GetComponent<Draggable>();
     
     void Update() 
     {
@@ -28,6 +31,8 @@ public class Lixo : MonoBehaviour
             if (this.transform.position == ponto[1].position) 
             { 
                 //lixocs.qtdLixo--;
+                colisao.gameObject.GetComponent<Animator>().enabled = false;
+                colisao.gameObject.GetComponent<Transform>().localScale = escalaInicialLixeira; 
                 Destroy(this.gameObject); // destroi desintegra oblitera ele :)
             } 
         }
@@ -35,7 +40,7 @@ public class Lixo : MonoBehaviour
 
     // pra saber quando soltou o mouse, só essa gambiarra funfou :|
     public int mouseStatus = 0;
-    void OnMouseDown() { mouseStatus = 1; }
+    void OnMouseDrag() { mouseStatus = 1; }
     void OnMouseUp() { if (mouseStatus == 1) { mouseStatus = 2; } }
     //
 
@@ -44,7 +49,8 @@ public class Lixo : MonoBehaviour
         if (col.name.Contains("Lixeira"))
         {
             colisao = col;
-            col.gameObject.GetComponent<Animator>().enabled = true; // chama a animacao
+            gameObject.GetComponent<Animator>().enabled = true; // chama a animacao
+            
             if (mouseStatus == 2) // se soltou o mouse
             {
                 for (int j = 0; j < col.gameObject.transform.childCount; j++) // pega os pontos
@@ -59,7 +65,7 @@ public class Lixo : MonoBehaviour
         if (col.name.Contains("Lixeira"))
         {
             col.gameObject.GetComponent<Animator>().enabled = false;
-            col.gameObject.GetComponent<Transform>().localScale = escalaInicialLixeira;
+            col.gameObject.GetComponent<Transform>().localScale = escalaInicialLixeira; 
         }
     }
 }
