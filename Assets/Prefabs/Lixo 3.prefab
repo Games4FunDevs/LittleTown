@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 61e761159f1f4b9468a7889120e6c935, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,6 +113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseDown: 0
+  beingDrag: 0
+  m: 0
 --- !u!54 &5714611611249695447
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -144,5 +146,12 @@ MonoBehaviour:
   ponto:
   - {fileID: 0}
   - {fileID: 0}
+  passou: 0
+  y: -1
   tipo: Lixeira3
+  objectColor: {r: 0, g: 0, b: 0, a: 0}
+  fadeColor: {r: 1, g: 0, b: 0, a: 1}
+  fadeTime: 1
+  fadeStart: 0
+  timePassed: 0
   mouseStatus: 0

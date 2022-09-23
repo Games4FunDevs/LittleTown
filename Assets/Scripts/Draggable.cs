@@ -40,7 +40,7 @@ public class Draggable : MonoBehaviour
     void OnMouseUp()
     {
         beingDrag = false;
-        StartCoroutine("w", 1);
+        StartCoroutine("w", 0.1f);
     }
 
     IEnumerator w()
