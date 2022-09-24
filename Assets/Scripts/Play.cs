@@ -13,12 +13,12 @@ public class Play : MonoBehaviour
     float speed = 6f, rotSpeed = 150f, gravidade = 8f;
     Vector3 inputDir, v_velocity;
     CharacterController cc;
+    Fade fadecs;
 
-    void Awake() => cc = GetComponent<CharacterController>();
-
-    void Update()
+    void Awake() 
     {
-
+        cc = GetComponent<CharacterController>();
+        fadecs = GameObject.Find("Fade").GetComponent<Fade>();
     }
 
     void FixedUpdate()
@@ -42,10 +42,10 @@ public class Play : MonoBehaviour
         switch (col.gameObject.tag) 
         {
             case "j1": // minigame da loja
-                SceneManager.LoadScene("loja");
+                fadecs.ChangeScene("loja"); 
                 break;
             case "j4":
-                SceneManager.LoadScene("lixo");
+                fadecs.ChangeScene("lixo");
                 break;
         }
     }

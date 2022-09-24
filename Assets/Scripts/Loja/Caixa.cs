@@ -11,6 +11,7 @@ public class Caixa : MonoBehaviour
     public GameObject[] opcoes; // botoes de escolha
     int[] resposta; // numeros que vao nos botoes
     Text texto; // soma na tela
+    GameObject fadecs;
     
     void Awake()
     {
@@ -19,11 +20,12 @@ public class Caixa : MonoBehaviour
         texto = GameObject.FindGameObjectWithTag("total").GetComponent<Text>();
         opc = GameObject.Find("opcoes");
         opc.SetActive(false);
+        fadecs = GameObject.Find("Fade"); 
     }
 
     void Update()
     {
-        if (repeticao >= 3) { SceneManager.LoadScene("Hub"); }
+        if (repeticao >= 3) { fadecs.GetComponent<Fade>().ChangeScene("Hub"); } 
 
         if (bNext != next && next < 2) // se passou um produto
         {
