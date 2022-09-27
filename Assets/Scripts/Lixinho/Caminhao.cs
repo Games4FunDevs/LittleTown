@@ -12,7 +12,8 @@ public class Caminhao : MonoBehaviour
         lastMousePos = Input.mousePosition;
     }
    
-    void OnMouseDrag() {
+    void OnMouseDrag() 
+    {
         Vector3 delta = Input.mousePosition - lastMousePos;
         Vector3 pos = transform.position;
         pos.x += delta.x * dragSpeed;
