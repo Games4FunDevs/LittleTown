@@ -47,6 +47,9 @@ public class Play : MonoBehaviour
             case "j4":
                 fadecs.ChangeScene("lixo");
                 break;
+            case "j2":
+                fadecs.ChangeScene("semaforos");
+                break;
         }
     }
 }
