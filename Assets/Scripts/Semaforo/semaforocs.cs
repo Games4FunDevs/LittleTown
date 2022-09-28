@@ -5,20 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class semaforocs : MonoBehaviour
 {
-    float speed = 6f, rotSpeed = 150f;
+    float speed = 3f, rotSpeed = 5f, gravidade = 9f;
     public Transform[] pontos;
-    Vector3 targetPos;
+    Vector3 targetPos, v_velocity;
     public int currentN = 0;
     Fade fadecs;
-    Rigidbody rb;
+    CharacterController cc;
 
     void Start() 
     {
-        rb = GetComponent<Rigidbody>();
-        for (int i = 0; i < GameObject.Find("pontos").gameObject.transform.childCount; i++)
-        {
-            pontos[i] = GameObject.Find("pontos").gameObject.transform.GetChild(i).GetComponent<Transform>();
-        }
+        cc = GetComponent<CharacterController>();
         targetPos = new Vector3(pontos[currentN].position.x, transform.position.y, pontos[currentN].position.z);
         fadecs = GameObject.Find("Fade").GetComponent<Fade>();
     }
@@ -30,54 +26,63 @@ public class semaforocs : MonoBehaviour
 
     void FixedUpdate()
     {   
-        if (this.transform.position.x != targetPos.x && this.transform.position.z != targetPos.z )
+        Movement();
+        Rotation();
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("ponto"))
         {
-            Movement();
+            ChangePoint();
+            col.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-        // Rotation();
     }
 
     void NextPosition()
     {
-        Debug.Log(this.transform.position + " | " + targetPos);
-        if (this.transform.position.x == targetPos.x && this.transform.position.z == targetPos.z 
-            && Input.GetKey(KeyCode.A))
+        //Debug.Log(this.transform.position + " | " + targetPos);
+        if (Vector3.Distance(transform.position, targetPos) < 1.5f && Input.GetKey(KeyCode.A))
         {
-            currentN++;
-            targetPos = new Vector3(pontos[currentN].position.x, transform.position.y, pontos[currentN].position.z);;
+            ChangePoint();
         }
         // se chegou no último
-        else if (this.transform.position.x == targetPos.x && this.transform.position.z == targetPos.z
-            && currentN == pontos.Length-1)
+        else if (Vector3.Distance(transform.position, targetPos) < 1.5f && currentN == pontos.Length - 1)
         {
             fadecs.ChangeScene("Hub");
         }
     }
 
+    void ChangePoint()
+    {
+        currentN++;
+        targetPos = new Vector3(pontos[currentN].position.x, transform.position.y, pontos[currentN].position.z);
+    }
+
     void Movement()
     {
-        // Vector3 actualTargetPos = new Vector3(targetPos.x, transform.position.y, targetPos.z);
-        // Vector3 newPos = Vector3.MoveTowards(transform.position, actualTargetPos, speed * Time.deltaTime);
-        // transform.position = newPos;
-
-        // var lookPos = targetPos - transform.position;
-        // lookPos.y = 0;
-
-        // Vector3 targetDirection = (lookPos - transform.position).normalized;
-        // rb.MovePosition(transform.position + targetDirection * Time.deltaTime * speed);
-
-        // Vector3 x = new Vector3(targetPos.x, transform.position.y, targetPos.z).normalized;
-        // if (Vector3.Distance(transform.position, x) > 0)
-        // {
-        //     rb.AddRelativeForce(Vector3.forward * speed, ForceMode.Force);
-        // }
+        Vector3 moveVector = targetPos - transform.position;
+        targetPos.y = 0;
+        cc.Move(moveVector * Time.deltaTime * speed);
+        // gravidade
+        if (cc.isGrounded) { v_velocity.y = 0; }
+        else { v_velocity.y -= gravidade * Time.deltaTime; }
     }
 
     void Rotation()
     {
-        var lookPos = targetPos - transform.position;
+        Vector3 lookPos;
+        if (currentN != pontos.Length-1)
+        {
+            lookPos = new Vector3(pontos[currentN+1].position.x, transform.position.y, pontos[currentN+1].position.z) - transform.position;
+        }
+        else
+        {
+            lookPos = new Vector3(pontos[currentN].position.x, transform.position.y, pontos[currentN].position.z) - transform.position;
+        }
+            
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotSpeed);
     }
 }
