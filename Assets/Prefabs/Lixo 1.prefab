@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6220095091498063867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.26, y: -0.18, z: -5.71}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.15147, y: 0.15147, z: 0.15147}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220095091498063867}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2432090755550338912, guid: 867f5291aadc8b54d88e657cf4d409c7, type: 3}
 --- !u!23 &6220095091498063748
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d8d09b09ca708044ad639925996212e, type: 2}
+  - {fileID: -3033667219593020291, guid: 0cb108932eb8bc04d9cf8732df774d39, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.814724, y: 8.326108, z: 2.8147247}
+  m_Center: {x: 0.03360582, y: 4.671235, z: -0.23524041}
 --- !u!114 &6220095091498063866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,11 +147,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   passou: 0
-  y: -1
   tipo: Lixeira1
-  objectColor: {r: 0, g: 0, b: 0, a: 0}
-  fadeColor: {r: 1, g: 0, b: 0, a: 1}
-  fadeTime: 1
-  fadeStart: 0
-  timePassed: 0
   mouseStatus: 0
