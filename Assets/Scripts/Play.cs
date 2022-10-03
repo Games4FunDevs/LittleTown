@@ -37,19 +37,26 @@ public class Play : MonoBehaviour
         cc.Move(v_velocity);
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnTriggerStay(Collider col) 
     {   // se colidir com objeto de certa tag
-        switch (col.gameObject.tag) 
-        {
-            case "j1": // minigame da loja
-                fadecs.ChangeScene("loja"); 
-                break;
-            case "j4":
-                fadecs.ChangeScene("lixo");
-                break;
-            case "j2":
-                fadecs.ChangeScene("semaforos");
-                break;
-        }
+        
+        // switch (col.gameObject.tag) 
+        // {
+        //     case "j1": // minigame da loja
+        //         if (col.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true 
+        //             && Input.GetButton("Fire1"))
+        //                 fadecs.ChangeScene("loja"); 
+        //         break;
+        //     case "j4":
+        //         if (col.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true 
+        //             && Input.GetButton("Fire1"))
+        //                 fadecs.ChangeScene("lixo");
+        //         break;
+        //     case "j2":
+        //         if (col.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true 
+        //             && Input.GetButton("Fire1"))
+        //                 fadecs.ChangeScene("semaforos");
+        //         break;
+        // }
     }
 }
