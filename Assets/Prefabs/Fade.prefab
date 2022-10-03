@@ -619,7 +619,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2043670923538716246}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Telas
         m_Mode: 1
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2043670923538716246}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Telas
         m_Mode: 1
