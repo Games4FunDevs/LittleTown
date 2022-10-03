@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -29,6 +30,11 @@ public class Menu : MonoBehaviour
         open = true;
         caderno.SetActive(menu);
         Telas();
+
+        // pausa
+        if (SceneManager.GetActiveScene().name == "semaforos" && menu == true)
+        { Time.timeScale = 0; }
+        else { Time.timeScale = 1; }
     }
 
     public void Telas()

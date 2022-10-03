@@ -23,7 +23,7 @@ public class playermov : MonoBehaviour
     void Update() 
     {
         NextPosition();
-        timer -= Time.deltaTime;
+        timer -= Time.deltaTime * Time.timeScale;
     }
 
     void FixedUpdate()
@@ -68,10 +68,10 @@ public class playermov : MonoBehaviour
     {
         Vector3 moveVector = targetPos - transform.position;
         targetPos.y = 0;
-        cc.Move(moveVector * Time.deltaTime * speed);
+        cc.Move(moveVector * Time.deltaTime * speed * Time.timeScale);
         // gravidade
         if (cc.isGrounded) { v_velocity.y = 0; }
-        else { v_velocity.y -= gravidade * Time.deltaTime; }
+        else { v_velocity.y -= gravidade * Time.deltaTime * Time.timeScale; }
     }
 
     void Rotation()
@@ -88,6 +88,6 @@ public class playermov : MonoBehaviour
             
         lookPos.y = 0;
         var rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotSpeed * Time.timeScale);
     }
 }
