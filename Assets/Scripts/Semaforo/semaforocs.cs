@@ -11,6 +11,7 @@ public class semaforocs : MonoBehaviour
     public int currentN = 0;
     Fade fadecs;
     CharacterController cc;
+    semaforo semaforo;
 
     void Start() 
     {
@@ -37,12 +38,18 @@ public class semaforocs : MonoBehaviour
             ChangePoint();
             col.gameObject.GetComponent<BoxCollider>().enabled = false;
         }
+
+        if (col.gameObject.name.Contains("Semáforo"))
+        {
+            semaforo = col.gameObject.GetComponent<semaforo>();
+        }
     }
 
     void NextPosition()
     {
         //Debug.Log(this.transform.position + " | " + targetPos);
-        if (Vector3.Distance(transform.position, targetPos) < 1.5f && Input.GetKey(KeyCode.A))
+        if (Vector3.Distance(transform.position, targetPos) < 1.5f && Input.GetButtonDown("Fire1") 
+            && semaforo.status == false)
         {
             ChangePoint();
         }
