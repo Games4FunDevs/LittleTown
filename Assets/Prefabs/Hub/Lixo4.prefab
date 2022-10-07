@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 6781923723116923503}
   - component: {fileID: 6781923723116923500}
   - component: {fileID: 6781923723116923501}
-  - component: {fileID: 6781923723116923410}
   - component: {fileID: 6781923723116923497}
-  - component: {fileID: 8114353216788381251}
+  - component: {fileID: 501624635674962872}
   m_Layer: 0
   m_Name: Lixo4
   m_TagString: lixo
@@ -95,26 +94,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6781923723116923411}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.8470993, y: 21.78868, z: 6.0625362}
+  m_Size: {x: 15.74, y: 21.78868, z: 18.79}
   m_Center: {x: 0.16156991, y: 10.394339, z: -0.053853225}
---- !u!114 &6781923723116923410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6781923723116923411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a7c8328b7a4eb4b82ad5ce2033a20d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseDown: 0
-  beingDrag: 0
-  m: 0
 --- !u!54 &6781923723116923497
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,21 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &8114353216788381251
-MonoBehaviour:
+--- !u!65 &501624635674962872
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6781923723116923411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fd3ae73f54d8c41ac4946cb79fb78f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ponto:
-  - {fileID: 0}
-  - {fileID: 0}
-  passou: 0
-  tipo: Lixeira4
-  mouseStatus: 0
+  serializedVersion: 2
+  m_Size: {x: 5.8778005, y: 21.315615, z: 5.8873825}
+  m_Center: {x: 0, y: 10.651265, z: 0}

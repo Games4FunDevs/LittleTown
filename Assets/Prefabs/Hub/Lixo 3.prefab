@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 4575460538660961486}
   - component: {fileID: 4575460538660961485}
   - component: {fileID: 4575460538660961484}
-  - component: {fileID: 4575460538660961459}
   - component: {fileID: 4575460538660961480}
-  - component: {fileID: 1295506094585661666}
+  - component: {fileID: 3416662384962652401}
   m_Layer: 0
   m_Name: Lixo 3
   m_TagString: lixo
@@ -95,26 +94,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4575460538660961458}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5459224, y: 1.6239105, z: 1.7798859}
+  m_Size: {x: 4.01, y: 1.6239105, z: 4.06}
   m_Center: {x: 0.08578759, y: 0.062391035, z: -0.031195402}
---- !u!114 &4575460538660961459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4575460538660961458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a7c8328b7a4eb4b82ad5ce2033a20d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseDown: 0
-  beingDrag: 0
-  m: 0
 --- !u!54 &4575460538660961480
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,21 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1295506094585661666
-MonoBehaviour:
+--- !u!65 &3416662384962652401
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4575460538660961458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fd3ae73f54d8c41ac4946cb79fb78f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ponto:
-  - {fileID: 0}
-  - {fileID: 0}
-  passou: 0
-  tipo: Lixeira3
-  mouseStatus: 0
+  serializedVersion: 2
+  m_Size: {x: 1.580344, y: 1.922209, z: 1.7103829}
+  m_Center: {x: 0.067756, y: 0.22307253, z: -0.025751501}

@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 7371002872552337288}
   - component: {fileID: 7371002872552337291}
   - component: {fileID: 7371002872552337290}
-  - component: {fileID: 7371002872552337397}
   - component: {fileID: 7371002872552337294}
-  - component: {fileID: 5246362599301864356}
+  - component: {fileID: 9013351267650545039}
   m_Layer: 0
   m_Name: Lixo 2
   m_TagString: lixo
@@ -95,26 +94,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7371002872552337396}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9877342, y: 3.33937, z: 2.143693}
+  m_Size: {x: 4.49, y: 3.33937, z: 5.04}
   m_Center: {x: -0.025993181, y: 2.5213213, z: -0.05198622}
---- !u!114 &7371002872552337397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7371002872552337396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a7c8328b7a4eb4b82ad5ce2033a20d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseDown: 0
-  beingDrag: 0
-  m: 0
 --- !u!54 &7371002872552337294
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,21 +115,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &5246362599301864356
-MonoBehaviour:
+--- !u!65 &9013351267650545039
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7371002872552337396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fd3ae73f54d8c41ac4946cb79fb78f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ponto:
-  - {fileID: 0}
-  - {fileID: 0}
-  passou: 0
-  tipo: Lixeira2
-  mouseStatus: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9854182, y: 3.2884457, z: 1.9709423}
+  m_Center: {x: 0, y: 2.560381, z: -0.014528992}
