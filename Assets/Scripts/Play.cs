@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Play : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class Play : MonoBehaviour
     Vector3 inputDir, v_velocity;
     CharacterController cc;
     Fade fadecs;
+    public TextMeshProUGUI[] textos;
 
     void Awake() 
     {
@@ -27,6 +30,11 @@ public class Play : MonoBehaviour
         Movement();
         if (cc.isGrounded) { v_velocity.y = 0; }
         else { v_velocity.y -= gravidade * Time.deltaTime; }
+    }
+
+    void Update()
+    {
+        textos[0].text = "Coletados: " + lixoColetado + "/5";
     }
 
     void Movement()
