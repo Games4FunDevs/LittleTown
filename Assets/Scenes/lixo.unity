@@ -1843,16 +1843,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1191093562}
+  - {fileID: 1060702909}
+  - {fileID: 1309137438}
+  - {fileID: 1330636864}
+  - {fileID: 232189766}
   prefab:
-  - {fileID: 6220095091498063867, guid: 7c44d4063eab81f40884c819539f03e7, type: 3}
-  - {fileID: 4051182899091446172, guid: a3810c9b589e76f41b314ab661857a27, type: 3}
-  - {fileID: 5714611611249695405, guid: b98d7c5ef1ab3604d95c7ad440ee1c93, type: 3}
-  - {fileID: 1660759003549361930, guid: 77adf0593f34d4d45b323a3669f65f88, type: 3}
+  - {fileID: 6220095091498063867, guid: 7367eb7c7105d6647a90bc2a01e019a5, type: 3}
+  - {fileID: 4051182899091446172, guid: 2e1c88c0956d32d4c81ebaafa0cb289c, type: 3}
+  - {fileID: 5714611611249695405, guid: c9f4f417f333beb47ac774c65966a0bf, type: 3}
+  - {fileID: 1660759003549361930, guid: 0d84c54a8f9afc2448488d4bd17444b8, type: 3}
 --- !u!1001 &1966913150
 PrefabInstance:
   m_ObjectHideFlags: 0
