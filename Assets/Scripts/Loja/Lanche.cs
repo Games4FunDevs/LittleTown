@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Lanche : MonoBehaviour
 {
-    int passou = 0; // status da compra / 0 (ainda no caixa) / 1 (passou na máquina) / 2 (ta na sacola, terminou)
-    [SerializeField] int preco = 0;
+    private int passou = 0; // status da compra / 0 (ainda no caixa) / 1 (passou na máquina) / 2 (ta na sacola, terminou)
+    [SerializeField] private int preco = 0;
     public Transform[] ponto; // lugares que a compra deve ficar
-    Draggable dragcs;
-    GameObject caixacs;
-    Animator anim;
+    private Draggable dragcs;
+    private GameObject caixacs;
+    private Animator anim;
 
-    void Start()
+    void Awake()
     {
         anim = GetComponent<Animator>();
         dragcs = GetComponent<Draggable>();
@@ -44,8 +44,6 @@ public class Lanche : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("caixa")) // passou na maquina
-        {
             this.passou = 1;
-        }
     }
 }

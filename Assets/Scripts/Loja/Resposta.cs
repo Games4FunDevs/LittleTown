@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class Resposta : MonoBehaviour
 {
     public int num_;
-    Caixa box;
+    private Caixa box;
     
-    void Start() => box = GameObject.FindGameObjectWithTag("caixa").GetComponent<Caixa>();
+    void Awake() => box = GameObject.FindGameObjectWithTag("caixa").GetComponent<Caixa>();
 
     public void Check()
     {

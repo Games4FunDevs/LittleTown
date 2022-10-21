@@ -4,24 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Menu : MonoBehaviour
 {
+    //
+    // código do caderno
+    //
+
     public bool menu = false, open = true;
     public GameObject caderno, op1, op2, t1, t2;
-    EventSystem current;
+    private EventSystem current;
+    private Controles controles;
 
     void Awake()
     {
         current = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        controles = new Controles();
+        controles.Enable();
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
-        {
+        if (controles.ActionMap.Menu.triggered) 
             MenuPanel();
-        }
     }
 
     public void MenuPanel()
@@ -32,14 +38,12 @@ public class Menu : MonoBehaviour
         Telas();
 
         // pausa
-        if (SceneManager.GetActiveScene().name == "semaforos" && menu == true)
-        { Time.timeScale = 0; }
-        else { Time.timeScale = 1; }
+        if (SceneManager.GetActiveScene().name == "semaforos" && menu == true) Time.timeScale = 0; 
+        else Time.timeScale = 1;
     }
 
     public void Telas()
     {
-        //if (tela != !tela) { tela = !tela; } 
         if (open == true || current.currentSelectedGameObject.name == "op1") 
         { 
             t1.SetActive(true);

@@ -10,8 +10,8 @@ public class Draggable : MonoBehaviour
     * é so colocar no objeto que vai ter esse comportamento
     */
 
-    Vector3 offset;
-    float zCoord;
+    private Vector3 offset;
+    private float zCoord;
     public bool mouseDown = false, beingDrag = false;
     public int m = 0;
 

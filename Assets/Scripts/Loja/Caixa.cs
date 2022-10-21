@@ -9,9 +9,9 @@ public class Caixa : MonoBehaviour
     public int total = 0, preco = 0, next = 0, bNext = 0, repeticao = 0; // next (proximo lanche) / bnext (lanche anterior)
     public GameObject prefab, spawn, opc; // prefab (lanche) / spawn (ponto de spawn) / opc (botao de escolha)
     public GameObject[] opcoes; // botoes de escolha
-    int[] resposta; // numeros que vao nos botoes
-    Text texto; // soma na tela
-    GameObject fadecs;
+    private int[] resposta; // numeros que vao nos botoes
+    private Text texto; // soma na tela
+    private GameObject fadecs;
     
     void Awake()
     {

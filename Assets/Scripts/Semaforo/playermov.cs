@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class playermov : MonoBehaviour
 {
-    float speed = 1f, rotSpeed = 5f, gravidade = 9f, timer = 30f;
+    private float speed = 1f, rotSpeed = 5f, gravidade = 9f, timer = 30f;
     public Transform[] pontos;
-    Vector3 targetPos, v_velocity;
+    private Vector3 targetPos, v_velocity;
     public int currentN = 0;
-    Fade fadecs;
-    CharacterController cc;
+    private Fade fadecs;
+    private CharacterController cc;
     public semaforo sc;
+    private Controles controles;
 
-    void Start() 
+    void Awake() 
     {
         cc = GetComponent<CharacterController>();
         targetPos = new Vector3(pontos[currentN].position.x, transform.position.y, pontos[currentN].position.z);
         fadecs = GameObject.Find("Fade").GetComponent<Fade>();
+        controles = new Controles();
+        controles.Enable();
     }
 
     void Update() 
@@ -47,7 +51,8 @@ public class playermov : MonoBehaviour
 
     void NextPosition()
     {
-        if (Vector3.Distance(transform.position, targetPos) < 1.5f && Input.GetButton("Fire1") && sc.status == true)
+        if (Vector3.Distance(transform.position, targetPos) < 1.5f && sc.status == true
+            && controles.ActionMap.Interagir.ReadValue<float>() > 0)
         {
             ChangePoint();
         }

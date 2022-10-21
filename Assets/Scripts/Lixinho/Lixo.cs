@@ -7,10 +7,10 @@ public class Lixo : MonoBehaviour
     public Transform[] ponto; // lugares que o lixo deve ficar
     public int passou = 0; // y = -1; // status do lixo
     public string tipo; // 0 = lixeira 1 (papel) // 1 = lixeira 2 (metal) // 2 = lixeira 3 (plástico) // 3 = lixeira 4 (orgânico)
-    Collider colisao;
-    Draggable dragcs;
-    bool x = true;
-    bool canDo = false;
+    
+    private Collider colisao;
+    private Draggable dragcs;
+    private bool x = true, canDo = false;
 
     // public Color objectColor;
     // public Color fadeColor = Color.red;
@@ -18,7 +18,7 @@ public class Lixo : MonoBehaviour
     // public float fadeTime = 1f;
     // public float fadeStart = 0, timePassed;
 
-    void Start() => dragcs = GetComponent<Draggable>();
+    void Awake() => dragcs = GetComponent<Draggable>();
     
     void Update() 
     {
@@ -53,13 +53,10 @@ public class Lixo : MonoBehaviour
         if (ponto[0] != null)
         {
             if (this.passou == 0 && this.tipo == this.colisao.name && dragcs.m == 1) // vai lansar o lixo
-            {
-                canDo = true;
-            } 
+            { canDo = true; } 
             else if (this.passou == 0 && this.tipo != this.colisao.name)
-            {
-                canDo = false;
-            }
+            { canDo = false; }
+
             // if (this.passou == 0 && tipo != colisao.name && y == -1)
             // {
             //     y = 0; // fade red

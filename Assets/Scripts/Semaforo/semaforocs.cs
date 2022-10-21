@@ -2,28 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class semaforocs : MonoBehaviour
 {
-    float speed = 3f, rotSpeed = 5f, gravidade = 9f;
+    private float speed = 3f, rotSpeed = 5f, gravidade = 9f;
     public Transform[] pontos;
-    Vector3 targetPos, v_velocity;
+    private Vector3 targetPos, v_velocity;
     public int currentN = 0;
-    Fade fadecs;
-    CharacterController cc;
-    semaforo semaforo;
+    private Fade fadecs;
+    private CharacterController cc;
+    private semaforo semaforo;
+    private Controles controles;
 
-    void Start() 
+    void Awake() 
     {
         cc = GetComponent<CharacterController>();
         targetPos = new Vector3(pontos[currentN].position.x, transform.position.y, pontos[currentN].position.z);
         fadecs = GameObject.Find("Fade").GetComponent<Fade>();
+        controles = new Controles();
+        controles.Enable();
     }
 
-    void Update() 
-    {
-        NextPosition();
-    }
+    void Update() => NextPosition();
 
     void FixedUpdate()
     {   
@@ -48,8 +49,8 @@ public class semaforocs : MonoBehaviour
     void NextPosition()
     {
         //Debug.Log(this.transform.position + " | " + targetPos);
-        if (Vector3.Distance(transform.position, targetPos) < 1.5f && Input.GetButtonDown("Fire1") 
-            && semaforo.status == false)
+        if (Vector3.Distance(transform.position, targetPos) < 1.5f && semaforo.status == false
+            && controles.ActionMap.Interagir.ReadValue<float>() > 0)
         {
             ChangePoint();
         }

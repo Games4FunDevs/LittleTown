@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LixoMinigame : MonoBehaviour
 {
-    int tipo = 0; // 0 = lixeira 1 (papel) // 1 = lixeira 2 (metal) // 2 = lixeira 3 (plástico) // 3 = lixeira 4 (orgânico)
+    private int tipo = 0; // 0 = lixeira 1 (papel) // 1 = lixeira 2 (metal) // 2 = lixeira 3 (plástico) // 3 = lixeira 4 (orgânico)
     public Transform[] spawnPoint; // ponto de spawn
     public GameObject[] prefab; // o objeto do lixo
-    GameObject fadecs;
+    private GameObject fadecs;
 
     void Awake() 
     {
@@ -25,7 +25,6 @@ public class LixoMinigame : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("lixo").Length <= 0)
         {
-            
             fadecs.GetComponent<Fade>().ChangeScene("Hub");
         }
     }

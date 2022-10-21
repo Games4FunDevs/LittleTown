@@ -8,11 +8,6 @@ public class semaforo : MonoBehaviour
     public float timer = 2f;
     public bool status = false; // false = vermelho
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         this.timer -= Time.deltaTime;

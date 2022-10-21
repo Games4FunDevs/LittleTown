@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
     public string cena_ = "";
-    public Image img;
 
     public void ChangeScene(string cena)
     {
@@ -15,13 +13,11 @@ public class Fade : MonoBehaviour
         StartCoroutine(FadeImage());
     }
 
-    public void CloseApp()
-    {
-        StartCoroutine(CloseImage());
-    }
- 
+    public void CloseApp() => StartCoroutine(CloseImage());
+
     IEnumerator FadeImage()
     {
+        Time.timeScale = 1;
         this.gameObject.transform.GetChild(2).GetComponent<Animator>().SetBool("s", true);
         yield return new WaitForSeconds(0.4f);
         SceneManager.LoadScene(cena_);
@@ -29,8 +25,7 @@ public class Fade : MonoBehaviour
 
     IEnumerator CloseImage()
     {
-        this.gameObject.transform.GetChild(2).GetComponent<Animator>().SetBool("s", true);
-        yield return new WaitForSeconds(0.4f);
+        yield return FadeImage();
         Application.Quit();
     }
 }

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class Play : MonoBehaviour
 {
@@ -12,45 +12,50 @@ public class Play : MonoBehaviour
     * se movimenta pelo cenário e chama outra cena ao interagir com objetos de certa tag
     */
 
-    float speed = 6f, rotSpeed = 150f, gravidade = 8f;
+    private float speed = 6f, rotSpeed = 150f, gravidade = 8f;
+    private Vector3 v_velocity;
+    private CharacterController cc;
+    private Fade fadecs;
+    private Controles controles;
+
     public int lixoColetado = 0;
-    Vector3 inputDir, v_velocity;
-    CharacterController cc;
-    Fade fadecs;
     public TextMeshProUGUI[] textos;
 
     void Awake() 
     {
         cc = GetComponent<CharacterController>();
         fadecs = GameObject.Find("Fade").GetComponent<Fade>(); 
+        controles = new Controles();
+        controles.Enable();
     }
 
     void FixedUpdate()
     {   
         Movement();
-        if (cc.isGrounded) { v_velocity.y = 0; }
-        else { v_velocity.y -= gravidade * Time.deltaTime; }
-    }
-
-    void Update()
-    {
-        textos[0].text = "Coletados: " + lixoColetado + "/5";
+        Gravidade();
     }
 
     void Movement()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 input = controles.ActionMap.Andar.ReadValue<Vector2>();
         Vector3 move = cc.transform.forward * input.y;
         cc.transform.Rotate(Vector3.up * input.x * (rotSpeed * Time.deltaTime));
         cc.Move(move * speed * Time.deltaTime);
         cc.Move(v_velocity);
     }
 
+    void Gravidade()
+    {
+        if (cc.isGrounded) { v_velocity.y = 0; }
+        else { v_velocity.y -= gravidade * Time.deltaTime; }
+    }
+
     void OnTriggerStay(Collider col) 
     {   
-        if (col.gameObject.tag == "lixo" && Input.GetButton("Fire1"))
+        if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0)
         {
             lixoColetado++;
+            textos[0].text = "Coletados: " + lixoColetado + "/5";
             Destroy(col.gameObject);
         }
     }
