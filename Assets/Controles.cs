@@ -123,7 +123,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
+                    ""name"": ""Up"",
                     ""id"": ""9c4932a4-30f8-4d0d-a40e-ad05fd239da1"",
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
@@ -134,7 +134,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
+                    ""name"": ""Down"",
                     ""id"": ""41a742b5-a9c9-49f9-9973-455be9c1dfa3"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
@@ -145,7 +145,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
+                    ""name"": ""Left"",
                     ""id"": ""ee0830b9-7bc9-4b18-9528-f221e405d288"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
@@ -156,8 +156,8 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""f6a695d7-b6e0-4f04-9cb6-9240864a3eb5"",
+                    ""name"": ""Right"",
+                    ""id"": ""dbbdb17f-746b-4d51-b354-de39a7c3c292"",
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",

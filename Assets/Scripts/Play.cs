@@ -37,9 +37,9 @@ public class Play : MonoBehaviour
 
     void Movement()
     {
-        Vector2 input = controles.ActionMap.Andar.ReadValue<Vector2>();
+        Vector2 input = controles.ActionMap.Andar.ReadValue<Vector2>(); 
         Vector3 move = cc.transform.forward * input.y;
-        cc.transform.Rotate(Vector3.up * input.x * (rotSpeed * Time.deltaTime));
+        transform.Rotate(Vector3.up * input.x * 2);
         cc.Move(move * speed * Time.deltaTime);
         cc.Move(v_velocity);
     }
