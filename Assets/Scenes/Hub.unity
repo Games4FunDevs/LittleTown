@@ -7834,7 +7834,7 @@ PrefabInstance:
     - target: {fileID: 2038559493804876563, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2303184019053903800, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
@@ -7851,6 +7851,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2990058610923457862, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_text
+      value: 'Lixos coletados: 0/5'
+      objectReference: {fileID: 0}
     - target: {fileID: 3266365712403570489, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_IsActive
@@ -7860,6 +7865,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136178133708947956, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4357834216976534053, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
@@ -7875,6 +7885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fade
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042672772558129089, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec418b98c7d8d1a488c84884f9042e90, type: 3}
@@ -9229,6 +9244,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "PopUpIntera\xE7\xE3o"
       objectReference: {fileID: 0}
+    - target: {fileID: 1684322690617516309, guid: 74f54e01b2e9f514abfab81a326a8a27,
+        type: 3}
+      propertyPath: t1
+      value: 
+      objectReference: {fileID: 1480180725}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f54e01b2e9f514abfab81a326a8a27, type: 3}
 --- !u!224 &1287658795 stripped
@@ -10550,6 +10570,12 @@ Transform:
   m_Father: {fileID: 522872261}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1480180725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9042672772558129089, guid: ec418b98c7d8d1a488c84884f9042e90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1093673851}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1484237288
 GameObject:
   m_ObjectHideFlags: 0
@@ -11221,6 +11247,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: "PopUpIntera\xE7\xE3o"
       objectReference: {fileID: 0}
+    - target: {fileID: 1684322690617516309, guid: 74f54e01b2e9f514abfab81a326a8a27,
+        type: 3}
+      propertyPath: t1
+      value: 
+      objectReference: {fileID: 1480180725}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f54e01b2e9f514abfab81a326a8a27, type: 3}
 --- !u!1001 &1575558607
@@ -16462,5 +16493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "PopUpIntera\xE7\xE3o"
       objectReference: {fileID: 0}
+    - target: {fileID: 1684322690617516309, guid: 74f54e01b2e9f514abfab81a326a8a27,
+        type: 3}
+      propertyPath: t1
+      value: 
+      objectReference: {fileID: 1480180725}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f54e01b2e9f514abfab81a326a8a27, type: 3}

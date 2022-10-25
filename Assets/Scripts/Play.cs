@@ -12,7 +12,7 @@ public class Play : MonoBehaviour
     * se movimenta pelo cenário e chama outra cena ao interagir com objetos de certa tag
     */
 
-    private float speed = 6f, rotSpeed = 150f, gravidade = 8f;
+    private float speed = 6f, rotSpeed = 2f, gravidade = 8f;
     private Vector3 v_velocity;
     private CharacterController cc;
     private Fade fadecs;
@@ -39,7 +39,7 @@ public class Play : MonoBehaviour
     {
         Vector2 input = controles.ActionMap.Andar.ReadValue<Vector2>(); 
         Vector3 move = cc.transform.forward * input.y;
-        transform.Rotate(Vector3.up * input.x * 2);
+        transform.Rotate(Vector3.up * input.x * rotSpeed);
         cc.Move(move * speed * Time.deltaTime);
         cc.Move(v_velocity);
     }
@@ -50,12 +50,13 @@ public class Play : MonoBehaviour
         else { v_velocity.y -= gravidade * Time.deltaTime; }
     }
 
-    void OnTriggerStay(Collider col) 
+    void OnTriggerStay(Collider col)
     {   
         if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0)
         {
             lixoColetado++;
-            textos[0].text = "Coletados: " + lixoColetado + "/5";
+            PlayerPrefs.SetInt("lixos", lixoColetado);
+            textos[0].text = "Lixos coletados: " + lixoColetado + "/5";
             Destroy(col.gameObject);
         }
     }

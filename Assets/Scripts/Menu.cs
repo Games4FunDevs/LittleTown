@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+using TMPro;
 
 public class Menu : MonoBehaviour
 {
@@ -13,15 +13,21 @@ public class Menu : MonoBehaviour
     //
 
     public bool menu = false, open = true;
-    public GameObject caderno, op1, op2, t1, t2;
+    public GameObject caderno, op1, op2, t1, t2, txt1;
     private EventSystem current;
     private Controles controles;
+    public TextMeshProUGUI texto;
 
     void Awake()
     {
         current = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         controles = new Controles();
         controles.Enable();
+        texto.text = "Lixos coletados: " + PlayerPrefs.GetInt("lixos").ToString() + "/5";
+        if (PlayerPrefs.GetInt("lixos") >= 4)
+        {
+            txt1.SetActive(true);
+        }
     }
 
     void Update()
@@ -47,6 +53,10 @@ public class Menu : MonoBehaviour
         if (open == true || current.currentSelectedGameObject.name == "op1") 
         { 
             t1.SetActive(true);
+            if (PlayerPrefs.GetInt("lixos") >= 4)
+            {
+                txt1.SetActive(true);
+            }
             t2.SetActive(false); 
             op1.GetComponent<Image>().color = Color.green;
             op2.GetComponent<Image>().color = Color.white;

@@ -18,5 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/semaforos.unity
     guid: 54fd0e9dd5caebb4597819adb4c82c03
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: fb53da8188ad66347b294766d83114c7,
+      type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: ca770a5cdcef73647bca3cdbd07129b3, type: 2}

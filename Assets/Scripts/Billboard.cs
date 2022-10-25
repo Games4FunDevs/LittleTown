@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Billboard : MonoBehaviour
 {
-    private GameObject player;
+    public GameObject player, t1;
     public Fade fadecs;
     private bool colideLixo = false;
 
@@ -41,8 +41,10 @@ public class Billboard : MonoBehaviour
                             fadecs.ChangeScene("loja"); 
                 break;
                 case "j4":
-                    if (player.GetComponent<Play>().lixoColetado >= 4 && this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
-                            fadecs.ChangeScene("lixo");
+                    if (PlayerPrefs.GetInt("lixos") >= 4 && this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
+                    {   
+                        fadecs.ChangeScene("lixo");
+                    }
                 break;
                 case "j2":
                     if (this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
