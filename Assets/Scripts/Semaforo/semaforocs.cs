@@ -55,7 +55,7 @@ public class semaforocs : MonoBehaviour
             ChangePoint();
         }
         // se chegou no último
-        else if (Vector3.Distance(transform.position, targetPos) < 1.5f && currentN == pontos.Length - 1)
+        else if (Vector3.Distance(transform.position, targetPos) < 1.5f && currentN >= pontos.Length - 1)
         {
             fadecs.ChangeScene("Hub");
         }
