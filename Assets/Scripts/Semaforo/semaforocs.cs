@@ -14,6 +14,7 @@ public class semaforocs : MonoBehaviour
     private CharacterController cc;
     private semaforo semaforo;
     private Controles controles;
+    private Animator anim;
 
     void Awake() 
     {
@@ -22,6 +23,7 @@ public class semaforocs : MonoBehaviour
         fadecs = GameObject.Find("Fade").GetComponent<Fade>();
         controles = new Controles();
         controles.Enable();
+        anim = gameObject.transform.GetChild(0).GetComponentInChildren<Animator>();
     }
 
     void Update() => NextPosition();
@@ -52,12 +54,18 @@ public class semaforocs : MonoBehaviour
         if (Vector3.Distance(transform.position, targetPos) < 1.5f && semaforo.status == false
             && controles.ActionMap.Interagir.ReadValue<float>() > 0)
         {
+            anim.SetInteger("andar", 1);
             ChangePoint();
         }
         // se chegou no último
         else if (Vector3.Distance(transform.position, targetPos) < 1.5f && currentN == pontos.Length - 1)
         {
             fadecs.ChangeScene("Hub");
+        }
+        else if (Vector3.Distance(transform.position, targetPos) < 1.5f && semaforo.status == false
+            && controles.ActionMap.Interagir.ReadValue<float>() <= 0)
+        {
+            anim.SetInteger("andar", 0);
         }
     }
 

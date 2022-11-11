@@ -1565,7 +1565,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cena_: 
-  img: {fileID: 9064587950029620993}
 --- !u!223 &375385248954185986
 Canvas:
   m_ObjectHideFlags: 0

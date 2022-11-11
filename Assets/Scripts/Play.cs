@@ -17,6 +17,7 @@ public class Play : MonoBehaviour
     private CharacterController cc;
     private Fade fadecs;
     private Controles controles;
+    private Animator anim;
 
     public int lixoColetado = 0;
     public TextMeshProUGUI[] textos;
@@ -27,6 +28,7 @@ public class Play : MonoBehaviour
         fadecs = GameObject.Find("Fade").GetComponent<Fade>(); 
         controles = new Controles();
         controles.Enable();
+        anim = gameObject.transform.GetChild(0).GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -42,6 +44,15 @@ public class Play : MonoBehaviour
         transform.Rotate(Vector3.up * input.x * 2);
         cc.Move(move * speed * Time.deltaTime);
         cc.Move(v_velocity);
+
+        if (input.x == 0 && input.y == 0)
+        {
+            anim.SetInteger("andar", 0);
+        }
+        else
+        {
+            anim.SetInteger("andar", 1);
+        }
     }
 
     void Gravidade()
