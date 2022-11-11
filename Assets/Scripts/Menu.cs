@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
         current = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         controles = new Controles();
         controles.Enable();
-        texto.text = "Lixos coletados: " + PlayerPrefs.GetInt("lixos").ToString() + "/5";
+        texto.text = "Coletar lixos: " + PlayerPrefs.GetInt("lixos").ToString() + "/5";
         if (PlayerPrefs.GetInt("lixos") >= 4)
         {
             txt1.SetActive(true);

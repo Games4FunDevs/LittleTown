@@ -47,7 +47,7 @@ public class Play : MonoBehaviour
 
         if (input.x == 0 && input.y == 0)
         {
-            anim.SetInteger("andar", 0);
+            anim.SetInteger("andar", 0); 
         }
         else
         {
@@ -63,11 +63,11 @@ public class Play : MonoBehaviour
 
     void OnTriggerStay(Collider col)
     {   
-        if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0)
+        if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0) 
         {
             lixoColetado++;
             PlayerPrefs.SetInt("lixos", lixoColetado);
-            textos[0].text = "Lixos coletados: " + lixoColetado + "/5";
+            textos[0].text = "Coletar lixos: " + lixoColetado + "/5";
             Destroy(col.gameObject);
         }
     }
