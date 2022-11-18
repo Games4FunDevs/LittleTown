@@ -34,6 +34,18 @@ public class Menu : MonoBehaviour
     {
         if (controles.ActionMap.Menu.triggered) 
             MenuPanel();
+
+        if (PlayerPrefs.GetString("j1") == "true")
+            t1.gameObject.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+
+        if (PlayerPrefs.GetString("j2") == "true")
+            t1.gameObject.transform.GetChild(3).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+
+        if (PlayerPrefs.GetString("j4") == "true")
+            t1.gameObject.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+    
+        if (PlayerPrefs.GetInt("lixos") >= 5)
+            t1.gameObject.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
     }
 
     public void MenuPanel()
@@ -60,6 +72,10 @@ public class Menu : MonoBehaviour
             t2.SetActive(false); 
             op1.GetComponent<Image>().color = Color.green;
             op2.GetComponent<Image>().color = Color.white;
+            op1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            op2.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            op1.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0);
+            op2.gameObject.transform.localScale = new Vector3(0.08f, 0.08f, 0);
             open = false;
         } 
         else if (current.currentSelectedGameObject.name == "op2") 
@@ -68,6 +84,10 @@ public class Menu : MonoBehaviour
             t2.SetActive(true); 
             op1.GetComponent<Image>().color = Color.white;
             op2.GetComponent<Image>().color = Color.green;
+            op1.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            op2.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            op1.gameObject.transform.localScale = new Vector3(0.08f, 0.08f, 0);
+            op2.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0);
         }
     }
 }

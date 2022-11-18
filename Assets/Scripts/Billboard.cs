@@ -8,6 +8,7 @@ public class Billboard : MonoBehaviour
     public GameObject player, t1;
     public Fade fadecs;
     private bool colideLixo = false;
+    public float distancia = 9f;
 
     private Controles controles;
 
@@ -21,7 +22,7 @@ public class Billboard : MonoBehaviour
 
     void Update() 
     {
-        if (Vector3.Distance(this.transform.position, this.player.transform.position) < 6f)
+        if (Vector3.Distance(this.transform.position, this.player.transform.position) < distancia)
         {
             transform.LookAt(Camera.main.transform.position, Vector3.up);
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
@@ -38,17 +39,24 @@ public class Billboard : MonoBehaviour
             {
                 case "j1": // minigame da loja
                     if (this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
-                            fadecs.ChangeScene("loja"); 
+                    {
+                        PlayerPrefs.SetString("j1", "true");
+                        fadecs.ChangeScene("loja"); 
+                    }
                 break;
                 case "j4":
                     if (PlayerPrefs.GetInt("lixos") >= 4 && this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
-                    {   
-                        fadecs.ChangeScene("lixo");
+                    {
+                        PlayerPrefs.SetString("j4", "true");
+                        fadecs.ChangeScene("lixo"); 
                     }
                 break;
                 case "j2":
                     if (this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
-                            fadecs.ChangeScene("semaforos");
+                    {
+                        PlayerPrefs.SetString("j2", "true");
+                        fadecs.ChangeScene("semaforo"); 
+                    }
                 break;
             }
         }

@@ -168,17 +168,6 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""71ed5c87-1837-4118-bd00-4c9087a39b8e"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interagir"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""f4905181-1702-4086-8ae3-6562a3ce6748"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -192,17 +181,6 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""e92e97a2-5426-4ef3-b53d-8abeb6339ad1"",
                     ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c5f23152-945d-4aea-9257-9fc72a2745a3"",
-                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
