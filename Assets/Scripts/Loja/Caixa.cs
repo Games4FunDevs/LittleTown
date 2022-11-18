@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class Caixa : MonoBehaviour
 {
     public int total = 0, preco = 0, next = 0, bNext = 0, repeticao = 0; // next (proximo lanche) / bnext (lanche anterior)
-    public GameObject prefab, spawn, opc; // prefab (lanche) / spawn (ponto de spawn) / opc (botao de escolha)
+    public GameObject[] prefab;
+    public GameObject spawn, opc; // prefab (lanche) / spawn (ponto de spawn) / opc (botao de escolha)
     public GameObject[] opcoes; // botoes de escolha
     private int[] resposta; // numeros que vao nos botoes
     private Text texto; // soma na tela
@@ -29,7 +30,7 @@ public class Caixa : MonoBehaviour
 
         if (bNext != next && next < 2) // se passou um produto
         {
-            Instantiate(prefab, spawn.transform.position, Quaternion.identity); // spawna um novo
+            Instantiate(prefab[Random.Range(0, 3)], spawn.transform.position, Quaternion.identity); // spawna um novo
             bNext = next; 
         }
 
