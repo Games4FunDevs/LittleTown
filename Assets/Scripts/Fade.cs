@@ -13,6 +13,11 @@ public class Fade : MonoBehaviour
         StartCoroutine(FadeImage());
     }
 
+    public void AnyButtonPressed(string cena)
+    {
+        ChangeScene(cena);
+    }
+
     public void CloseApp() => StartCoroutine(CloseImage());
 
     IEnumerator FadeImage()
