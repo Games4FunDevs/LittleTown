@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1475,17 +1475,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1f915f9380299ff4193e4398ed0cb3cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.97
+      value: -36.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f915f9380299ff4193e4398ed0cb3cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.003586
+      value: 22.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f915f9380299ff4193e4398ed0cb3cb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -45.79
+      value: -47.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1f915f9380299ff4193e4398ed0cb3cb,
         type: 3}
@@ -13750,17 +13750,17 @@ PrefabInstance:
     - target: {fileID: 3427027316368795057, guid: 8957ac57ffee9ec4f8eecb5be7643b69,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.259937
+      value: -23.25
       objectReference: {fileID: 0}
     - target: {fileID: 3427027316368795057, guid: 8957ac57ffee9ec4f8eecb5be7643b69,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.278465
+      value: -2.28
       objectReference: {fileID: 0}
     - target: {fileID: 3427027316368795057, guid: 8957ac57ffee9ec4f8eecb5be7643b69,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.1294
+      value: -17.28
       objectReference: {fileID: 0}
     - target: {fileID: 3427027316368795057, guid: 8957ac57ffee9ec4f8eecb5be7643b69,
         type: 3}
@@ -13810,6 +13810,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186069751078828904, guid: bc9c42ecd6b0b5548a11a6bd4eecdd11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3186069751078828908, guid: bc9c42ecd6b0b5548a11a6bd4eecdd11,
         type: 3}
