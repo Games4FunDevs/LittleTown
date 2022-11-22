@@ -5334,6 +5334,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: MenuPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 852160812232436086, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1963771028907758364, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_Pivot.x
@@ -9789,7 +9794,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484237288}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.05, y: 1, z: 25.6}
@@ -13814,7 +13819,7 @@ PrefabInstance:
     - target: {fileID: 3186069751078828904, guid: bc9c42ecd6b0b5548a11a6bd4eecdd11,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3186069751078828908, guid: bc9c42ecd6b0b5548a11a6bd4eecdd11,
         type: 3}
