@@ -55,7 +55,7 @@ public class Billboard : MonoBehaviour
                     if (this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
                     {
                         PlayerPrefs.SetString("j2", "true");
-                        fadecs.ChangeScene("semaforo"); 
+                        fadecs.ChangeScene("semaforos"); 
                     }
                 break;
             }
