@@ -40,7 +40,7 @@ public partial class @Controles : IInputActionCollection2, IDisposable
                     ""name"": ""Interagir"",
                     ""type"": ""Value"",
                     ""id"": ""ab2a3914-a249-4d9b-8a8e-c8b44c4e288b"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true

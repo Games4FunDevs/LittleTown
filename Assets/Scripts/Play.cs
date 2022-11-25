@@ -21,25 +21,26 @@ public class Play : MonoBehaviour
 
     public int lixoColetado = 0;
     public TextMeshProUGUI[] textos;
+    bool coletou = false;
 
-    void Awake() 
+    void Awake()
     {
         cc = GetComponent<CharacterController>();
-        fadecs = GameObject.Find("Fade").GetComponent<Fade>(); 
+        fadecs = GameObject.Find("Fade").GetComponent<Fade>();
         controles = new Controles();
         controles.Enable();
         anim = gameObject.transform.GetChild(0).GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
-    {   
+    {
         Movement();
         Gravidade();
     }
 
     void Movement()
     {
-        Vector2 input = controles.ActionMap.Andar.ReadValue<Vector2>(); 
+        Vector2 input = controles.ActionMap.Andar.ReadValue<Vector2>();
         Vector3 move = cc.transform.forward * input.y;
         transform.Rotate(Vector3.up * input.x * rotSpeed);
         cc.Move(move * speed * Time.deltaTime);
@@ -47,7 +48,7 @@ public class Play : MonoBehaviour
 
         if (input.x == 0 && input.y == 0)
         {
-            anim.SetInteger("andar", 0); 
+            anim.SetInteger("andar", 0);
         }
         else
         {
@@ -62,13 +63,21 @@ public class Play : MonoBehaviour
     }
 
     void OnTriggerStay(Collider col)
-    {   
-        if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0) 
+    {
+        if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0 && coletou == false)
         {
+            coletou = true;
             lixoColetado++;
             PlayerPrefs.SetInt("lixos", lixoColetado);
             textos[0].text = "Coletar lixos: " + lixoColetado + "/5";
             Destroy(col.gameObject);
+        }
+    }
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "lixo")
+        {
+            coletou = false;
         }
     }
 }
