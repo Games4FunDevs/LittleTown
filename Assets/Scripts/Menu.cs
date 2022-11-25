@@ -46,6 +46,14 @@ public class Menu : MonoBehaviour
     
         if (PlayerPrefs.GetInt("lixos") >= 5)
             t1.gameObject.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+
+        if (t1.gameObject.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough &&
+            t1.gameObject.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough &&
+            t1.gameObject.transform.GetChild(3).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough &&
+            t1.gameObject.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough)
+        {
+            SceneManager.LoadScene("End");
+        }
     }
 
     public void MenuPanel()

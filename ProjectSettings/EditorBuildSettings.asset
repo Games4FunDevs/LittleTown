@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/semaforos.unity
     guid: 54fd0e9dd5caebb4597819adb4c82c03
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: 19a474c6123bfac429d995b1fe1b3f89
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: fb53da8188ad66347b294766d83114c7,
       type: 2}
