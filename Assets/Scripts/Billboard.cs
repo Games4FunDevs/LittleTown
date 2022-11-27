@@ -26,7 +26,6 @@ public class Billboard : MonoBehaviour
 
         if (Vector3.Distance(this.transform.position, this.player.transform.position) < distancia)
         {
-            this.gameObject.transform.GetChild(0).GetComponent<Image>().color = Color.green;
             Interagiu();
         }
     }

@@ -6971,7 +6971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lixoColetado: 0
   textos:
-  - {fileID: 0}
+  - {fileID: 1758549553}
 --- !u!143 &1095811045
 CharacterController:
   m_ObjectHideFlags: 0
@@ -11544,6 +11544,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.920635, y: 4.785364, z: 2.8911896}
   m_Center: {x: 0.050537154, y: 2.438202, z: -0.041112427}
+--- !u!114 &1758549553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2990058610923457862, guid: ec418b98c7d8d1a488c84884f9042e90,
+    type: 3}
+  m_PrefabInstance: {fileID: 828218281}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1773593711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bd6be8f8c04d59a4fbeaa3e9d7921eba,

@@ -26,12 +26,15 @@ public class mainmenu : MonoBehaviour
         }
     }
 
-    void Update() 
+    public void NewGame() 
     {
-        if (Input.anyKey)
-        {
-            fade.ChangeScene("Hub");
-            button.Play();
-        }
+        PlayerPrefs.DeleteAll();
+        Continuar();
+    }
+
+    public void Continuar()
+    {
+        fade.ChangeScene("Hub");
+        button.Play();
     }
 }
