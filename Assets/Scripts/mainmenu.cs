@@ -1,34 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class mainmenu : MonoBehaviour
 {
     public Fade fade;
     public AudioSource button;
+    public Button continuarBtn;
 
     void Awake()
     {
-        if (PlayerPrefs.GetString("NovoJogo") != "false")
-        {
-            PlayerPrefs.SetString("NovoJogo", "true");
-        }
-        
-        if (PlayerPrefs.GetString("LixoTutor") != "false")
-        {
-            PlayerPrefs.SetString("LixoTutor", "true");
-        }
-        
-        if (PlayerPrefs.GetString("LojaTutor") != "false")
-        {
-            PlayerPrefs.SetString("LojaTutor", "true");
-        }
+        if (PlayerPrefs.GetString("NovoJogo") == "false") { continuarBtn.interactable = true; }
     }
 
     public void NewGame() 
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetString("NovoJogo", "true"); 
+        PlayerPrefs.SetString("LixoTutor", "true");
+        PlayerPrefs.SetString("LojaTutor", "true");
         Continuar();
     }
 
