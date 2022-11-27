@@ -60,6 +60,7 @@ public class semaforocs : MonoBehaviour
         // se chegou no último
         else if (Vector3.Distance(transform.position, targetPos) < 1.5f && currentN >= pontos.Length - 1)
         {
+            PlayerPrefs.SetString("Minigame_Semaforo", "Finalizado");
             fadecs.ChangeScene("Hub");
         }
         else if (Vector3.Distance(transform.position, targetPos) < 1.5f && semaforo.status == false

@@ -26,7 +26,11 @@ public class Caixa : MonoBehaviour
 
     void Update()
     {
-        if (repeticao >= 3) { fadecs.GetComponent<Fade>().ChangeScene("Hub"); } 
+        if (repeticao >= 3) 
+        { 
+            PlayerPrefs.SetString("Minigame_Loja", "Finalizado");
+            fadecs.GetComponent<Fade>().ChangeScene("Hub"); 
+        } 
 
         if (bNext != next && next < 2) // se passou um produto
         {

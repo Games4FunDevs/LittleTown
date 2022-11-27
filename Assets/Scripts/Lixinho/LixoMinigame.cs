@@ -25,6 +25,7 @@ public class LixoMinigame : MonoBehaviour
     {
         if (GameObject.FindGameObjectsWithTag("lixo").Length <= 0)
         {
+            PlayerPrefs.SetString("Minigame_Lixo", "Finalizado");
             fadecs.GetComponent<Fade>().ChangeScene("Hub");
         }
     }

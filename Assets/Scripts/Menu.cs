@@ -35,22 +35,19 @@ public class Menu : MonoBehaviour
         if (controles.ActionMap.Menu.triggered) 
             MenuPanel();
 
-        if (PlayerPrefs.GetString("j1") == "true")
+        // Checa se os minigames foram jogados e marca no caderno
+        if (PlayerPrefs.GetString("Minigame_Loja") == "Finalizado")
             t1.gameObject.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-
-        if (PlayerPrefs.GetString("j2") == "true")
-            t1.gameObject.transform.GetChild(3).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-
-        if (PlayerPrefs.GetString("j4") == "true")
+        if (PlayerPrefs.GetString("Minigame_Lixo") == "Finalizado")
             t1.gameObject.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-    
+        if (PlayerPrefs.GetString("Minigame_Semaforo") == "Finalizado")
+            t1.gameObject.transform.GetChild(3).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
         if (PlayerPrefs.GetInt("lixos") >= 5)
             t1.gameObject.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
 
-        if (t1.gameObject.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough &&
-            t1.gameObject.transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough &&
-            t1.gameObject.transform.GetChild(3).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough &&
-            t1.gameObject.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough)
+        // checa se jogou todos os minigames
+        if (PlayerPrefs.GetString("Minigame_Semaforo") == "Finalizado" && PlayerPrefs.GetString("Minigame_Loja") == "Finalizado" && PlayerPrefs.GetString("Minigame_Lixo") == "Finalizado" &&
+            t1.gameObject.transform.GetChild(1).GetComponentInChildren<TextMeshProUGUI>().fontStyle == FontStyles.Strikethrough)
         {
             SceneManager.LoadScene("End");
         }
