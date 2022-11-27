@@ -22,6 +22,7 @@ public class Play : MonoBehaviour
     public int lixoColetado = 0;
     public TextMeshProUGUI[] textos;
     bool coletou = false;
+    GameObject objColidido;
 
     void Awake()
     {
@@ -31,6 +32,19 @@ public class Play : MonoBehaviour
         controles.Enable();
         anim = gameObject.transform.GetChild(0).GetComponentInChildren<Animator>();
         lixoColetado = PlayerPrefs.GetInt("lixos");
+    }
+
+    void Update()
+    {
+        if (coletou == true)
+        {
+            lixoColetado++;
+            PlayerPrefs.SetInt("lixos", lixoColetado);
+            textos[0].text = "Coletar lixos: " + lixoColetado + "/5";
+            Destroy(objColidido);
+            objColidido = null;
+            coletou = false;
+        }
     }
 
     void FixedUpdate()
@@ -67,18 +81,8 @@ public class Play : MonoBehaviour
     {
         if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0 && coletou == false)
         {
+            objColidido = col.gameObject;
             coletou = true;
-            lixoColetado++;
-            PlayerPrefs.SetInt("lixos", lixoColetado);
-            textos[0].text = "Coletar lixos: " + lixoColetado + "/5";
-            Destroy(col.gameObject);
-        }
-    }
-    void OnTriggerExit(Collider col)
-    {
-        if (col.gameObject.tag == "lixo")
-        {
-            coletou = false;
         }
     }
 }
