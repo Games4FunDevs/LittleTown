@@ -5294,36 +5294,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 201317368832475002, guid: ec418b98c7d8d1a488c84884f9042e90,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.15640648
-      objectReference: {fileID: 0}
-    - target: {fileID: 201317368832475002, guid: ec418b98c7d8d1a488c84884f9042e90,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.13305017
-      objectReference: {fileID: 0}
-    - target: {fileID: 201317368832475002, guid: ec418b98c7d8d1a488c84884f9042e90,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.0004901128
-      objectReference: {fileID: 0}
-    - target: {fileID: 201317368832475002, guid: ec418b98c7d8d1a488c84884f9042e90,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 6.5
-      objectReference: {fileID: 0}
     - target: {fileID: 375385248954185986, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
-    - target: {fileID: 375385248954185986, guid: ec418b98c7d8d1a488c84884f9042e90,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 664352485871981699, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5499,11 +5474,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: carinha
       objectReference: {fileID: 0}
-    - target: {fileID: 2990058610923457862, guid: ec418b98c7d8d1a488c84884f9042e90,
-        type: 3}
-      propertyPath: m_fontStyle
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3973139029887511404, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_IsActive
@@ -5569,12 +5539,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8794641932228623821, guid: ec418b98c7d8d1a488c84884f9042e90,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -665781254, guid: f31fbea96e8c33e469d36b35c608f8c0,
-        type: 3}
     - target: {fileID: 8873112030466293117, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_IsActive
