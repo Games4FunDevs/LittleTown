@@ -14,6 +14,16 @@ public class mainmenu : MonoBehaviour
         {
             PlayerPrefs.SetString("NovoJogo", "true");
         }
+        
+        if (PlayerPrefs.GetString("LixoTutor") != "false")
+        {
+            PlayerPrefs.SetString("LixoTutor", "true");
+        }
+        
+        if (PlayerPrefs.GetString("LojaTutor") != "false")
+        {
+            PlayerPrefs.SetString("LixoTutor", "true");
+        }
     }
 
     void Update() 

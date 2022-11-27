@@ -45,7 +45,7 @@ public class Billboard : MonoBehaviour
                     }
                 break;
                 case "j4":
-                    if (PlayerPrefs.GetInt("lixos") >= 4 && this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
+                    if (PlayerPrefs.GetInt("lixos") >= 5 && this.gameObject.transform.GetChild(0).gameObject.activeInHierarchy == true)
                     {
                         PlayerPrefs.SetString("j4", "true");
                         fadecs.ChangeScene("lixo"); 

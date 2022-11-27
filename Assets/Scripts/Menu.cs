@@ -12,8 +12,8 @@ public class Menu : MonoBehaviour
     // código do caderno
     //
 
-    public bool menu = false, open = true, tutor = false;
-    public GameObject caderno, op1, op2, t1, t2, txt1, tutorial;
+    public bool menu = false, open = true, tutor = false, tutor1 = false, tutor2 = false;
+    public GameObject caderno, op1, op2, t1, t2, txt1, tutorial, tutorial1, tutorial2;
     private EventSystem current;
     private Controles controles;
     public TextMeshProUGUI texto;
@@ -24,6 +24,7 @@ public class Menu : MonoBehaviour
         controles = new Controles();
         controles.Enable();
         texto.text = "Coletar lixos: " + PlayerPrefs.GetInt("lixos").ToString() + "/5";
+        
         if (PlayerPrefs.GetInt("lixos") >= 4)
         {
             txt1.SetActive(true);
@@ -34,6 +35,18 @@ public class Menu : MonoBehaviour
             tutorial.SetActive(true);
             tutor = true;
         }
+
+        if (PlayerPrefs.GetString("LixoTutor") == "true" && SceneManager.GetActiveScene().name == "lixo")
+        {
+            tutorial1.SetActive(true);
+            tutor1 = true;
+        }
+
+        if (PlayerPrefs.GetString("LojaTutor") == "true" && SceneManager.GetActiveScene().name == "loja")
+        {
+            tutorial2.SetActive(true);
+            tutor2 = true;
+        }
     }
 
     void Update()
@@ -43,7 +56,18 @@ public class Menu : MonoBehaviour
             tutorial.SetActive(false);
             PlayerPrefs.SetString("NovoJogo", "false");
         }
-        
+
+        if (tutor1 == true && Input.anyKey)
+        {
+            tutorial1.SetActive(false);
+            PlayerPrefs.SetString("LixoTutor", "false");
+        }
+
+        if (tutor2 == true && Input.anyKey)
+        {
+            tutorial2.SetActive(false);
+            PlayerPrefs.SetString("LojaTutor", "false");
+        }
 
         if (controles.ActionMap.Menu.triggered) 
             MenuPanel();

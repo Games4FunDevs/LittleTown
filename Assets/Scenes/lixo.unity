@@ -942,7 +942,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.99819946, y: 3.9253807, z: 6.420664}
-  m_Center: {x: 5.1858006, y: 5.9873095, z: 3.83496}
+  m_Center: {x: 3.62, y: 5.9873095, z: 3.83496}
 --- !u!65 &951503415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -955,7 +955,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.7950239, y: 3.9761748, z: 6.01431}
-  m_Center: {x: -3.681182, y: 5.961912, z: 4.123339}
+  m_Center: {x: -2.3, y: 5.961912, z: 4.123339}
 --- !u!4 &951503416
 Transform:
   m_ObjectHideFlags: 0
@@ -1927,6 +1927,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 852160812232436086, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1963771028907758364, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_Pivot.x
