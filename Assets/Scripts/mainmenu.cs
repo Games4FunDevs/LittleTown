@@ -8,6 +8,14 @@ public class mainmenu : MonoBehaviour
     public Fade fade;
     public AudioSource button;
 
+    void Awake()
+    {
+        if (PlayerPrefs.GetString("NovoJogo") != "false")
+        {
+            PlayerPrefs.SetString("NovoJogo", "true");
+        }
+    }
+
     void Update() 
     {
         if (Input.anyKey)

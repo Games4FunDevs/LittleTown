@@ -12,8 +12,8 @@ public class Menu : MonoBehaviour
     // código do caderno
     //
 
-    public bool menu = false, open = true;
-    public GameObject caderno, op1, op2, t1, t2, txt1;
+    public bool menu = false, open = true, tutor = false;
+    public GameObject caderno, op1, op2, t1, t2, txt1, tutorial;
     private EventSystem current;
     private Controles controles;
     public TextMeshProUGUI texto;
@@ -28,10 +28,23 @@ public class Menu : MonoBehaviour
         {
             txt1.SetActive(true);
         }
+
+        if (PlayerPrefs.GetString("NovoJogo") == "true" && SceneManager.GetActiveScene().name == "Hub")
+        {
+            tutorial.SetActive(true);
+            tutor = true;
+        }
     }
 
     void Update()
     {
+        if (tutor == true && Input.anyKey)
+        {
+            tutorial.SetActive(false);
+            PlayerPrefs.SetString("NovoJogo", "false");
+        }
+        
+
         if (controles.ActionMap.Menu.triggered) 
             MenuPanel();
 
