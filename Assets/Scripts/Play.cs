@@ -30,6 +30,7 @@ public class Play : MonoBehaviour
         controles = new Controles();
         controles.Enable();
         anim = gameObject.transform.GetChild(0).GetComponentInChildren<Animator>();
+        lixoColetado = PlayerPrefs.GetInt("lixos");
     }
 
     void FixedUpdate()
