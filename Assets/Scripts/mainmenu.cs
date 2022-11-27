@@ -22,7 +22,7 @@ public class mainmenu : MonoBehaviour
         
         if (PlayerPrefs.GetString("LojaTutor") != "false")
         {
-            PlayerPrefs.SetString("LixoTutor", "true");
+            PlayerPrefs.SetString("LojaTutor", "true");
         }
     }
 
