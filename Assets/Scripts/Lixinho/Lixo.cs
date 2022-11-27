@@ -8,7 +8,7 @@ public class Lixo : MonoBehaviour
     public int passou = 0; // y = -1; // status do lixo
     public string tipo; // 0 = lixeira 1 (papel) // 1 = lixeira 2 (metal) // 2 = lixeira 3 (plástico) // 3 = lixeira 4 (orgânico)
     
-    public Collider colisao;
+    public Collider colisao, colisao_;
     private Draggable dragcs;
     public bool x = true, canDo = false;
 
@@ -72,15 +72,24 @@ public class Lixo : MonoBehaviour
                 }
             }
 
-            if (this.gameObject.transform.position == ponto[0].position) { passou = 1; } // vai pro proximo ponto
+            if (this.gameObject.transform.position == ponto[0].position) { this.passou = 1; } // vai pro proximo ponto
             
-            if (passou == 1)
+            if (this.passou == 1)
             {
-                gameObject.GetComponent<BoxCollider>().enabled = false;
-                transform.position = Vector3.MoveTowards(transform.position, ponto[1].position, 10 * Time.deltaTime); // vai pro ponto 2
+                //this.gameObject.GetComponent<BoxCollider>().enabled = false;
+                this.transform.position = Vector3.MoveTowards(transform.position, ponto[1].position, 10 * Time.deltaTime); // vai pro ponto 2
             }
             
-            
+            if (colisao_.name.Contains("destroi")) 
+            { 
+                this.colisao.gameObject.transform.Find("Lixeira").gameObject.GetComponent<Animator>().SetInteger("s", 0);
+                Destroy(this.gameObject); // destroi desintegra oblitera ele :)
+            }
+
+            if (this.transform.position.y >= 2)
+            {
+                this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            }
         }
     }
 
@@ -103,6 +112,7 @@ public class Lixo : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
+        colisao_ = col;
         if (col.name.Contains("Lixeira"))
         {
             colisao = col;
@@ -111,12 +121,6 @@ public class Lixo : MonoBehaviour
             col.gameObject.transform.Find("Lixeira").gameObject.GetComponent<Animator>().SetInteger("s", 1);; // chama a animacao
             // objectColor = col.gameObject.transform.Find("Lixeira").gameObject.GetComponent<MeshRenderer>().material.color;
         }
-
-        if (col.name == "destroi") 
-        { 
-            colisao.gameObject.transform.Find("Lixeira").gameObject.GetComponent<Animator>().SetInteger("s", 0);
-            Destroy(this.gameObject); // destroi desintegra oblitera ele :)
-        } 
     }
 
     void OnTriggerStay(Collider col)
