@@ -55,6 +55,19 @@ public class Caixa : MonoBehaviour
             resposta[num] = total; // resposta certa
             opcoes[num].transform.GetChild(0).GetComponent<Text>().text = resposta[num].ToString(); // passa pro botao
             opcoes[num].GetComponent<Resposta>().num_ = int.Parse(opcoes[num].transform.GetChild(0).GetComponent<Text>().text); // atualiza var da resposta
+            
+            for (var i = 0; i < resposta.Length; i++)
+            {
+                int count = 0;
+                if (i != num)
+                {
+                    while (resposta[num].Equals(resposta[i]))
+                    {
+                        resposta[i] = Random.Range(0, 40); // resposta errada
+                        opcoes[i].transform.GetChild(0).GetComponent<Text>().text = resposta[i].ToString(); // passa pro botao
+                    }
+                }
+            }
 
             texto.text = (total - preco).ToString() + " + " + preco.ToString(); // atualiza a soma
             opc.SetActive(true); // mostra os botoes
