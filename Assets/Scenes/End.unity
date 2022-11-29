@@ -10667,6 +10667,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boy_roupas_2blend
       objectReference: {fileID: 0}
+    - target: {fileID: 8431522349423969823, guid: a35e51ca8ef331c41adecd3c3fee3178,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 7922633807321987303, guid: 630505c579eec8e4b976ae2d9a242bc8,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35e51ca8ef331c41adecd3c3fee3178, type: 3}
 --- !u!1 &1654566353
