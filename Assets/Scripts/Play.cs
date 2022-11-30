@@ -17,7 +17,7 @@ public class Play : MonoBehaviour
     private CharacterController cc;
     private Fade fadecs;
     private Controles controles;
-    private Animator anim;
+    public Animator anim;
 
     public int lixoColetado = 0;
     public TextMeshProUGUI[] textos;
@@ -32,18 +32,21 @@ public class Play : MonoBehaviour
         controles.Enable();
         
         lixoColetado = PlayerPrefs.GetInt("lixos");
+    }
 
-         if (PlayerPrefs.GetString("player") == "mina")
+    void Start()
+    {
+        if (PlayerPrefs.GetString("player") == "mina")
         {
             this.transform.GetChild(0).gameObject.SetActive(true);
             this.transform.GetChild(1).gameObject.SetActive(false);
-            anim = gameObject.transform.GetChild(0).GetComponentInChildren<Animator>();
+            anim = this.gameObject.transform.GetChild(0).GetComponent<Animator>();
         }
-        else if (PlayerPrefs.GetString("player") == "cara")
+        if (PlayerPrefs.GetString("player") == "cara")
         {
             this.transform.GetChild(0).gameObject.SetActive(false);
             this.transform.GetChild(1).gameObject.SetActive(true);
-            anim = gameObject.transform.GetChild(1).GetComponentInChildren<Animator>();
+            anim = this.gameObject.transform.GetChild(1).GetComponent<Animator>();
         }
     }
 

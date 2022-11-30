@@ -9,6 +9,7 @@ public class mainmenu : MonoBehaviour
     public Fade fade;
     public AudioSource button;
     public Button continuarBtn;
+    public GameObject skinObj, others;
 
     void Awake()
     {
@@ -21,7 +22,9 @@ public class mainmenu : MonoBehaviour
         PlayerPrefs.SetString("NovoJogo", "true"); 
         PlayerPrefs.SetString("LixoTutor", "true");
         PlayerPrefs.SetString("LojaTutor", "true");
-        Continuar();
+        PlayerPrefs.SetString("Skin", "true");
+        skinObj.SetActive(true);
+        others.SetActive(false);
     }
 
     public void Continuar()
