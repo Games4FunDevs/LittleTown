@@ -18,7 +18,7 @@ public class Fade : MonoBehaviour
     IEnumerator FadeImage()
     {
         Time.timeScale = 1;
-        this.gameObject.transform.GetChild(1).GetComponent<Animator>().SetBool("s", true);
+        this.gameObject.transform.GetChild(5).GetComponent<Animator>().SetBool("s", true);
         yield return new WaitForSeconds(0.4f);
         SceneManager.LoadScene(cena_);
     }

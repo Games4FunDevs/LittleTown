@@ -210,3 +210,4 @@ MonoBehaviour:
   player: {fileID: 0}
   t1: {fileID: 0}
   fadecs: {fileID: 0}
+  distancia: 9

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Draggable : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class Draggable : MonoBehaviour
     void OnMouseDrag()
     {
         transform.position = GetMouseWorldPos() + offset;
-        transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 4.24f);
+        if (SceneManager.GetActiveScene().name == "lixo") { transform.position = new Vector3(this.transform.position.x, this.transform.position.y, 4.24f); }
         mouseDown = false;
         beingDrag = true;
     }
