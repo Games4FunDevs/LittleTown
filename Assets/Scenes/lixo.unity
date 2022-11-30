@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2037,6 +2037,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2203544887100211340, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203544887100211340, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203544887100211340, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203544887100211340, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203544887100211340, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203544887100211340, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3224401873278393077, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 967811a7cada6e24fbfa8835312195f3, type: 2}
     - target: {fileID: 7226276025951223630, guid: ec418b98c7d8d1a488c84884f9042e90,
         type: 3}
       propertyPath: m_Name
@@ -2047,6 +2082,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8816662233204697870, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 967811a7cada6e24fbfa8835312195f3, type: 2}
+    - target: {fileID: 8816662233204697870, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816662233204697870, guid: ec418b98c7d8d1a488c84884f9042e90,
+        type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: fca1a24236dea7640b369a864b5178a5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec418b98c7d8d1a488c84884f9042e90, type: 3}
 --- !u!1 &1570694474
