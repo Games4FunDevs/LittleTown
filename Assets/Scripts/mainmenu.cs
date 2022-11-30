@@ -8,12 +8,11 @@ public class mainmenu : MonoBehaviour
 {
     public Fade fade;
     public AudioSource button;
-    public Button continuarBtn;
-    public GameObject skinObj, others;
+    public GameObject skinObj, others, continuarBtn;
 
     void Awake()
     {
-        if (PlayerPrefs.GetString("NovoJogo") == "false") { continuarBtn.interactable = true; }
+        if (PlayerPrefs.GetString("NovoJogo") == "false") { continuarBtn.SetActive(true); }
     }
 
     public void NewGame() 
