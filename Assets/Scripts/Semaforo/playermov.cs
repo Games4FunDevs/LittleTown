@@ -22,6 +22,8 @@ public class playermov : MonoBehaviour
         fadecs = GameObject.Find("Fade").GetComponent<Fade>();
         controles = new Controles();
         controles.Enable();
+
+        
     }
 
     void Update() 
