@@ -23,11 +23,11 @@ public class semaforo : MonoBehaviour
 
         if (this.status == false)
         {
-            this.gameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
+            this.gameObject.transform.GetChild(1).gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.green;
         }
         else
         {
-            this.gameObject.GetComponentInChildren<MeshRenderer>().material.color = Color.green;
+            this.gameObject.transform.GetChild(1).gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.red;
         }
     }
 }
