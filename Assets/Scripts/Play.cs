@@ -59,13 +59,15 @@ public class Play : MonoBehaviour
             textos[0].text = "Coletar lixos: " + lixoColetado + "/5";
             Destroy(objColidido);
             objColidido = null;
-            coletou = false;
+            StartCoroutine("Wait", 1f);
         }
     }
 
     void FixedUpdate()
     {
-        Movement();
+        if (coletou == false) 
+            Movement();
+
         Gravidade();
     }
 
@@ -97,8 +99,15 @@ public class Play : MonoBehaviour
     {
         if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0 && coletou == false)
         {
-            objColidido = col.gameObject;
             coletou = true;
+            anim.SetInteger("andar", 2);
+            objColidido = col.gameObject;
         }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        coletou = false;
     }
 }

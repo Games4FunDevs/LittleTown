@@ -58,7 +58,6 @@ public class Caixa : MonoBehaviour
             
             for (var i = 0; i < resposta.Length; i++)
             {
-                int count = 0;
                 if (i != num)
                 {
                     while (resposta[num].Equals(resposta[i]))

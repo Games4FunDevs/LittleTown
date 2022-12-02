@@ -112,10 +112,6 @@ public class Menu : MonoBehaviour
                 txt1.SetActive(true);
             }
             t2.SetActive(false); 
-            //op1.GetComponent<Image>().color = Color.green;
-            //op2.GetComponent<Image>().color = Color.white;
-            op1.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            op2.gameObject.transform.GetChild(0).gameObject.SetActive(false);
             op1.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0);
             op2.gameObject.transform.localScale = new Vector3(0.08f, 0.08f, 0);
             open = false;
@@ -124,10 +120,6 @@ public class Menu : MonoBehaviour
         {
             t1.SetActive(false);
             t2.SetActive(true); 
-            //op1.GetComponent<Image>().color = Color.white;
-            //op2.GetComponent<Image>().color = Color.green;
-            op1.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-            op2.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             op1.gameObject.transform.localScale = new Vector3(0.08f, 0.08f, 0);
             op2.gameObject.transform.localScale = new Vector3(0.1f, 0.1f, 0);
         }
