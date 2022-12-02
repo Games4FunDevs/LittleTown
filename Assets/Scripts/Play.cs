@@ -20,6 +20,7 @@ public class Play : MonoBehaviour
     public Animator anim;
 
     public int lixoColetado = 0;
+    bool aux = false;
     public TextMeshProUGUI[] textos;
     bool coletou = false;
     GameObject objColidido;
@@ -52,13 +53,19 @@ public class Play : MonoBehaviour
 
     void Update()
     {
+        
         if (coletou == true)
         {
-            lixoColetado++;
-            PlayerPrefs.SetInt("lixos", lixoColetado);
-            textos[0].text = "Coletar lixos: " + lixoColetado + "/5";
-            Destroy(objColidido);
-            objColidido = null;
+            if (aux == true)
+            {
+                lixoColetado++;
+                PlayerPrefs.SetInt("lixos", lixoColetado);
+                textos[0].text = "Coletar lixos: " + lixoColetado + "/5";
+                Destroy(objColidido);
+                objColidido = null;
+                aux = false;
+            }
+            
             StartCoroutine("Wait", 1f);
         }
     }
@@ -100,6 +107,7 @@ public class Play : MonoBehaviour
         if (col.gameObject.tag == "lixo" && controles.ActionMap.Interagir.ReadValue<float>() > 0 && coletou == false)
         {
             coletou = true;
+            aux = true;
             anim.SetInteger("andar", 2);
             objColidido = col.gameObject;
         }
