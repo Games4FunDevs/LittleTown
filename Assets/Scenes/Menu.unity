@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1153340900}
         m_TargetAssemblyTypeName: Fade, Assembly-CSharp
         m_MethodName: CloseApp
         m_Mode: 1
