@@ -5,8 +5,14 @@ using UnityEngine;
 public class semaforo : MonoBehaviour
 {
 
-    public float timer = 2f;
-    public bool status = false; // false = vermelho
+    private float timer = 3f;
+    public bool status = false, x = false; // false = vermelho
+    private Animator anim;
+
+    void Awake()
+    {
+        anim = this.gameObject.GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -18,16 +24,25 @@ public class semaforo : MonoBehaviour
             {
                 this.status = !this.status;
             }
-            this.timer = 2f;
+            this.timer = 3f;
         }
 
         if (this.status == false)
         {
-            this.gameObject.transform.GetChild(1).gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.green;
+            this.anim.SetBool("cor", true); // green 
         }
         else
         {
-            this.gameObject.transform.GetChild(1).gameObject.transform.GetChild(1).GetComponent<MeshRenderer>().material.color = Color.red;
+            this.anim.SetBool("cor", false); // red
+        }
+
+        if (this.gameObject.transform.GetChild(0).gameObject.transform.GetChild(2).gameObject.activeSelf == true)
+        {
+            x = true;
+        }
+        else
+        {
+            x = false;
         }
     }
 }

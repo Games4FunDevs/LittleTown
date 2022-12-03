@@ -63,7 +63,7 @@ public class semaforocs : MonoBehaviour
     void NextPosition()
     {
         //Debug.Log(this.transform.position + " | " + targetPos);
-        if (Vector3.Distance(transform.position, targetPos) < 1.5f && semaforo.status == false
+        if (Vector3.Distance(transform.position, targetPos) < 1.5f && semaforo.x == false
             && controles.ActionMap.Interagir.ReadValue<float>() > 0)
         {
             anim.SetInteger("andar", 1);
@@ -75,7 +75,7 @@ public class semaforocs : MonoBehaviour
             PlayerPrefs.SetString("Minigame_Semaforo", "Finalizado");
             fadecs.ChangeScene("Hub");
         }
-        else if (Vector3.Distance(transform.position, targetPos) < 1.5f && semaforo.status == false
+        else if (Vector3.Distance(transform.position, targetPos) < 1.5f && semaforo.x == false
             && controles.ActionMap.Interagir.ReadValue<float>() <= 0)
         {
             anim.SetInteger("andar", 0);
