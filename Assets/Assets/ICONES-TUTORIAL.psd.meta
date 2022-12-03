@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f31fbea96e8c33e469d36b35c608f8c0
+guid: f144da5e7ff4f8548b98947501a37656
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,55 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tela Nova_0
+      name: ICONES-TUTORIAL_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 41188d112a4dc8044b9193b68e92b8b0
-      internalID: -665781254
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tela Nova_1
-      rect:
-        serializedVersion: 2
-        x: 684
-        y: 0
-        width: 1236
-        height: 1080
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dec6ae7090a34143948bc4b817e0d81
-      internalID: -1276328587
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tela Nova_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1231
-        height: 1080
+        x: 100
+        y: 535
+        width: 819
+        height: 155
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,8 +130,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04832e17cc3689c43a8d03e523e1cfe7
-      internalID: 167215873
+      spriteID: 88c5b13d882f86a40a12de29b9186178
+      internalID: 1849016795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICONES-TUTORIAL_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 345
+        width: 811
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99adae2d6fceac643908c16bcdf39fa5
+      internalID: 1001627112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICONES-TUTORIAL_4
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 463
+        width: 175
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d01ec1e6d41850418d68f97c97c1418
+      internalID: -1830443926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICONES-TUTORIAL_5
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 467
+        width: 175
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16402e470d1a534e9d7dce73cef2dc5
+      internalID: 1261536064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICONES-TUTORIAL_10
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 178
+        width: 187
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71251240e4a5e6a4686aa80b684e0514
+      internalID: -165253507
       vertices: []
       indices: 
       edges: []
@@ -189,12 +231,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tela Nova_1: -1276328587
-      Tela Nova_0: -665781254
-      Tela Nova_2: 167215873
+      ICONES-TUTORIAL_8: -1933123456
+      ICONES-TUTORIAL_4: -1830443926
+      ICONES-TUTORIAL_3: 462954040
+      ICONES-TUTORIAL_11: 48679632
+      ICONES-TUTORIAL_1: 1001627112
+      ICONES-TUTORIAL_0: 1849016795
+      ICONES-TUTORIAL_6: 2051955939
+      ICONES-TUTORIAL_5: 1261536064
+      ICONES-TUTORIAL_2: 277954442
+      ICONES-TUTORIAL_10: -165253507
+      ICONES-TUTORIAL_9: -1451460702
+      ICONES-TUTORIAL_7: -1560521536
   spritePackingTag: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
+  pSDShowRemoveMatteOption: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 
