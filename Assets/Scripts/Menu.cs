@@ -12,8 +12,8 @@ public class Menu : MonoBehaviour
     // código do caderno
     //
 
-    public bool menu = false, open = true, tutor = false, tutor1 = false, tutor2 = false;
-    public GameObject caderno, op1, op2, t1, t2, txt1, tutorial, tutorial1, tutorial2;
+    public bool menu = false, open = true, tutor = false, tutor1 = false, tutor2 = false, tutor4;
+    public GameObject caderno, op1, op2, t1, t2, txt1, tutorial, tutorial1, tutorial2, tutorial4;
     private EventSystem current;
     private Controles controles;
     public TextMeshProUGUI texto;
@@ -41,6 +41,12 @@ public class Menu : MonoBehaviour
             tutorial1.SetActive(true);
             tutor1 = true;
         }
+        
+        if (PlayerPrefs.GetString("SemaforoTutor") == "true" && SceneManager.GetActiveScene().name == "semaforos")
+        {
+            tutorial4.SetActive(true);
+            tutor4 = true;
+        }
 
         if (PlayerPrefs.GetString("LojaTutor") == "true" && SceneManager.GetActiveScene().name == "loja")
         {
@@ -67,6 +73,12 @@ public class Menu : MonoBehaviour
         {
             tutorial2.SetActive(false);
             PlayerPrefs.SetString("LojaTutor", "false");
+        }
+
+        if (tutor4 == true && Input.anyKey)
+        {
+            tutorial4.SetActive(false);
+            PlayerPrefs.SetString("SemaforoTutor", "false");
         }
 
         if (controles.ActionMap.Menu.triggered) 

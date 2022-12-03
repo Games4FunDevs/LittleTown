@@ -30,6 +30,7 @@ public class mainmenu : MonoBehaviour
         PlayerPrefs.SetString("NovoJogo", "true"); 
         PlayerPrefs.SetString("LixoTutor", "true");
         PlayerPrefs.SetString("LojaTutor", "true");
+        PlayerPrefs.SetString("SemaforoTutor", "true");
         PlayerPrefs.SetString("Skin", "true");
         skinObj.SetActive(true);
         others.SetActive(false);
