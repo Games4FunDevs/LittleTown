@@ -13,6 +13,7 @@ public class Caixa : MonoBehaviour
     private int[] resposta; // numeros que vao nos botoes
     private Text texto; // soma na tela
     private GameObject fadecs;
+    private Animator anim;
     
     void Awake()
     {
@@ -22,6 +23,7 @@ public class Caixa : MonoBehaviour
         opc = GameObject.Find("opcoes");
         opc.SetActive(false);
         fadecs = GameObject.Find("Fade"); 
+        anim = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -68,9 +70,27 @@ public class Caixa : MonoBehaviour
                 }
             }
 
-            texto.text = (total - preco).ToString() + " + " + preco.ToString(); // atualiza a soma
+            texto.text = (total - preco).ToString() + " + " + preco.ToString() + " = ? "; // atualiza a soma
             opc.SetActive(true); // mostra os botoes
             next = 3; // pra n ficar chamando direto no update
+        }
+
+        
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "lanche")
+        {
+            anim.SetInteger("a", 1);
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.tag == "lanche")
+        {
+            anim.SetInteger("a", 0);
         }
     }
 }
