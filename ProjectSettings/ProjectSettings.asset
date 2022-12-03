@@ -143,7 +143,11 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+<<<<<<< Updated upstream
   - {fileID: 0}
+=======
+  - {fileID: -3863802504348806986, guid: fb53da8188ad66347b294766d83114c7, type: 2}
+>>>>>>> Stashed changes
   - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
