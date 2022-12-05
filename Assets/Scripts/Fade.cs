@@ -7,11 +7,19 @@ public class Fade : MonoBehaviour
 {
     public string cena_ = "";
     public GameObject sound;
+    static Fade instance;
 
     void Start()
     {
         sound = GameObject.Find("Sound");
-        DontDestroyOnLoad(sound);
+        
+        if (instance == null)
+        {    
+            instance = this; // In first scene, make us the singleton.
+            DontDestroyOnLoad(sound);
+        }
+        else if(instance != this)
+            Destroy(sound); // On reload, singleton already set, so destroy duplicate.
     }
 
     public void ChangeScene(string cena)
