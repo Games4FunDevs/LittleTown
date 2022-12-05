@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class Fade : MonoBehaviour
 {
     public string cena_ = "";
+    public GameObject sound;
+
+    void Start()
+    {
+        sound = GameObject.Find("Sound");
+        DontDestroyOnLoad(sound);
+    }
 
     public void ChangeScene(string cena)
     {

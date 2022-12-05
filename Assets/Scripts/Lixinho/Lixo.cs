@@ -11,8 +11,13 @@ public class Lixo : MonoBehaviour
     public Collider colisao, colisao_;
     private Draggable dragcs;
     public bool x = true, canDo = false;
+    private AudioSource som;
 
-    void Awake() => dragcs = GetComponent<Draggable>();
+    void Awake()
+    {
+        dragcs = GetComponent<Draggable>();
+        som = GetComponent<AudioSource>();
+    }
     
     void Update() 
     {
@@ -29,6 +34,7 @@ public class Lixo : MonoBehaviour
                 if (this.x == true) // acertou
                 {   // efeito de partícula
                     this.colisao.gameObject.transform.Find("ringParticle").GetComponent<ParticleSystem>().Play();
+                    som.Play();
                     this.x = false; 
                 }
             }

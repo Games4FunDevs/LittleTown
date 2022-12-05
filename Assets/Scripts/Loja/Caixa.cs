@@ -14,10 +14,12 @@ public class Caixa : MonoBehaviour
     private Text texto; // soma na tela
     private GameObject fadecs;
     private Animator anim;
+    private AudioSource som;
     
     void Awake()
     {
         resposta = new int[3];
+        som = GetComponent<AudioSource>();
         bNext = next;
         texto = GameObject.FindGameObjectWithTag("total").GetComponent<Text>();
         opc = GameObject.Find("opcoes");
@@ -83,6 +85,7 @@ public class Caixa : MonoBehaviour
         if (col.gameObject.tag == "lanche")
         {
             anim.SetInteger("a", 1);
+            som.Play();
         }
     }
 

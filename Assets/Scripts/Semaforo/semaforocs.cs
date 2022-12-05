@@ -15,6 +15,7 @@ public class semaforocs : MonoBehaviour
     private semaforo semaforo;
     private Controles controles;
     private Animator anim;
+    private AudioSource som;
 
     void Awake() 
     {
@@ -23,6 +24,7 @@ public class semaforocs : MonoBehaviour
         fadecs = GameObject.Find("Fade").GetComponent<Fade>();
         controles = new Controles();
         controles.Enable();
+        som = GetComponent<AudioSource>();
         if (PlayerPrefs.GetString("player") == "mina")
         {
             this.transform.GetChild(0).gameObject.SetActive(true);
@@ -67,6 +69,7 @@ public class semaforocs : MonoBehaviour
             && controles.ActionMap.Interagir.ReadValue<float>() > 0)
         {
             anim.SetInteger("andar", 1);
+            som.Play();
             ChangePoint();
         }
         // se chegou no último

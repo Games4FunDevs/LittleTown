@@ -18,6 +18,7 @@ public class Play : MonoBehaviour
     private Fade fadecs;
     private Controles controles;
     public Animator anim;
+    public AudioSource passos;
 
     public int lixoColetado = 0;
     bool aux = false;
@@ -33,6 +34,8 @@ public class Play : MonoBehaviour
         controles.Enable();
         
         lixoColetado = PlayerPrefs.GetInt("lixos");
+
+        passos = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -89,11 +92,19 @@ public class Play : MonoBehaviour
         if (input.x == 0 && input.y == 0)
         {
             anim.SetInteger("andar", 0);
+            passos.Stop();
         }
         else
         {
             anim.SetInteger("andar", 1);
+            
+            if (!passos.isPlaying)
+            {
+                passos.Play();
+            }
         }
+
+
     }
 
     void Gravidade()
